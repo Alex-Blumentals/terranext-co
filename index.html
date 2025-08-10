@@ -108,10 +108,7 @@
   <main>
     <!-- Top Logo (above hero) -->
     <div class="container-pad py-6 flex justify-center" data-aos="fade" data-aos-duration="700">
-      <picture>
-        <source srcset="assets/TerraNextHorizontal.svg" type="image/svg+xml">
-        <img src="assets/TerraNextHorizontal-256px.png" alt="TerraNext" class="h-12 md:h-14 w-auto block" loading="eager">
-      </picture>
+      <img src="assets/TerraNextHorizontal.svg" alt="TerraNext" class="h-12 md:h-14 w-auto block" loading="eager">
     </div>
     <!-- HERO with parallax background -->
     <section class="relative min-h-[92vh] flex items-center justify-center text-white text-center px-4 overflow-hidden" aria-label="Hero">
@@ -146,18 +143,14 @@
             </div>
           </div>
           <!-- Left: Boom infraestructura -->
-          <div id="split-left" class="absolute inset-y-0 left-0 w-1/2 md:w-[55%] bg-center bg-cover flex items-center justify-center" style="background-image:url('assets/boom_infraestructura.jpg')">
+          <div id="split-left" class="absolute inset-y-0 left-0 w-1/2 md:w-[55%] bg-center bg-cover flex items-start justify-center pt-10 md:pt-12" style="background-image:url('assets/boom_infraestructura.jpg')">
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-black/10"></div>
-            <div class="relative z-10 p-6">
-              <h3 class="text-white text-2xl md:text-3xl font-extrabold text-center">Boom de Infraestructura en España</h3>
-            </div>
+            <div class="relative z-10 p-0"><h3 class="text-white text-3xl md:text-5xl font-extrabold text-center leading-tight">Boom de Infraestructura en España</h3></div>
           </div>
           <!-- Right: Escasez crítica -->
-          <div id="split-right" class="absolute inset-y-0 right-0 w-1/2 md:w-[55%] bg-center bg-cover flex items-center justify-center" style="background-image:url('assets/Escasez_critica.jpg')">
+          <div id="split-right" class="absolute inset-y-0 right-0 w-1/2 md:w-[55%] bg-center bg-cover flex items-start justify-center pt-10 md:pt-12" style="background-image:url('assets/Escasez_critica.jpg')">
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-black/10"></div>
-            <div class="relative z-10 p-6">
-              <h3 class="text-white text-2xl md:text-3xl font-extrabold text-center">Escasez Crítica de Agua</h3>
-            </div>
+            <div class="relative z-10 p-0"><h3 class="text-white text-3xl md:text-5xl font-extrabold text-center leading-tight">Escasez Crítica de Agua</h3></div>
           </div>
         </div>
         <p class="mt-6 text-center text-sm text-gray-500">Deslice para ver el contraste ↓</p>
@@ -173,19 +166,23 @@
         <!-- Parallax Soil Profile Infographic -->
         <figure id="soil-infographic" class="relative mt-12 h-[120vh] md:h-[150vh] rounded-2xl overflow-hidden shadow-xl">
           <!-- Optional small loop video on top third -->
-          <video id="soil-loop" class="absolute top-0 inset-x-0 h-1/3 w-full object-cover opacity-80 hidden md:block" autoplay muted loop playsinline poster="assets/suelo_degradado.jpg">
+          <video id="soil-loop" class="absolute top-0 inset-x-0 h-1/3 w-full object-cover opacity-90 z-20" autoplay muted loop playsinline poster="assets/suelo_degradado.jpg">
             <source src="assets/soil-loop.mp4" type="video/mp4" />
           </video>
           <!-- Base: suelo degradado -->
-          <img src="assets/suelo_degradado.jpg" alt="Suelo degradado y erosionado" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+          <img src="assets/suelo_degradado.jpg" alt="Suelo degradado y erosionado" class="absolute inset-0 w-full h-full object-cover z-10" loading="lazy">
           <!-- Reveal: suelo esponja/raíces (masked) -->
-          <img id="soil-reveal" src="assets/soil_ponge.jpg" alt="Perfil de suelo esponja con raíces" class="absolute inset-0 w-full h-full object-cover" style="--reveal:0%; -webkit-mask-image: linear-gradient(to top, black var(--reveal), transparent calc(var(--reveal) + 12%)); mask-image: linear-gradient(to top, black var(--reveal), transparent calc(var(--reveal) + 12%));" loading="lazy">
-          <!-- Labels (bigger) -->
-          <div class="absolute top-5 left-5 z-10">
-            <span class="inline-flex items-center px-4 py-2 text-base md:text-lg rounded-full bg-white/80 text-gray-800 shadow">Antes: suelo compactado</span>
+          <img id="soil-reveal" src="assets/soil_ponge.jpg" alt="Perfil de suelo esponja con raíces" class="absolute inset-0 w-full h-full object-cover z-30" style="--reveal:0%; -webkit-mask-image: linear-gradient(to top, black var(--reveal), transparent calc(var(--reveal) + 12%)); mask-image: linear-gradient(to top, black var(--reveal), transparent calc(var(--reveal) + 12%));" loading="lazy">
+          <!-- Overlay heading for prominence -->
+          <div class="absolute top-3 left-1/2 -translate-x-1/2 z-40">
+            <span class="px-5 py-2 rounded-full text-white" style="background:rgba(13,59,102,.85); font-family:'Montserrat',sans-serif; font-weight:700; font-size:clamp(16px,2.8vw,28px);">Creando una Esponja de Suelo Vivo</span>
           </div>
-          <div class="absolute bottom-5 right-5 z-10">
-            <span class="inline-flex items-center px-4 py-2 text-base md:text-lg rounded-full bg-emerald-600/90 text-white shadow">Después: esponja biológica de raíces</span>
+          <!-- Labels (bigger) -->
+          <div class="absolute top-5 left-5 z-40">
+            <span class="inline-flex items-center px-4 py-2 text-base md:text-lg rounded-full bg-white/85 text-gray-900 shadow">Antes: suelo compactado</span>
+          </div>
+          <div class="absolute bottom-5 right-5 z-40">
+            <span class="inline-flex items-center px-4 py-2 text-base md:text-lg rounded-full bg-emerald-600/95 text-white shadow">Después: esponja biológica de raíces</span>
           </div>
         </figure>
         <div class="mt-6 grid md:grid-cols-3 gap-6 text-center">
@@ -204,26 +201,34 @@
         <div class="mt-12 grid lg:grid-cols-2 gap-10 items-center">
           <!-- Quadrant Grid (big tap targets) -->
           <div>
-            <div id="value-grid" class="grid grid-cols-3 gap-0 place-items-center">
+            <div id="value-grid" class="grid grid-cols-3 grid-rows-3 gap-0 place-items-center">
               <!-- Top Left → Suelo Esponja (panel-solution) -->
-              <button class="value-node group p-0 bg-transparent shadow-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0d3b66]" data-target="panel-solution" aria-controls="panel-solution">
+              <button class="value-node group col-start-1 row-start-1 p-0 bg-transparent shadow-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0d3b66]" data-target="panel-solution" aria-controls="panel-solution">
                 <img src="assets/Top%20Left.svg" alt="Suelo Esponja" class="w-32 h-32 md:w-40 md:h-40 object-contain transition-transform duration-300 group-hover:scale-105">
               </button>
+              <!-- Top Center spacer -->
+              <div class="col-start-2 row-start-1"></div>
               <!-- Top Right → Resiliencia (panel-resilience) -->
-              <button class="value-node group p-0 bg-transparent shadow-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0d3b66]" data-target="panel-resilience" aria-controls="panel-resilience">
+              <button class="value-node group col-start-3 row-start-1 p-0 bg-transparent shadow-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0d3b66]" data-target="panel-resilience" aria-controls="panel-resilience">
                 <img src="assets/Top%20Right.svg" alt="Resiliencia del Activo" class="w-32 h-32 md:w-40 md:h-40 object-contain transition-transform duration-300 group-hover:scale-105">
               </button>
+              <!-- Middle Left spacer -->
+              <div class="col-start-1 row-start-2"></div>
+              <!-- Center → Visión (panel-vision) -->
+              <button class="value-node group col-start-2 row-start-2 p-0 bg-transparent shadow-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0d3b66]" data-target="panel-vision" aria-controls="panel-vision">
+                <img src="assets/Center.svg" alt="Visión Estratégica" class="w-36 h-36 md:w-44 md:h-44 object-contain transition-transform duration-300 group-hover:scale-105">
+              </button>
+              <!-- Middle Right spacer -->
+              <div class="col-start-3 row-start-2"></div>
               <!-- Bottom Left → ESG/licencia (panel-esg) -->
-              <button class="value-node group p-0 bg-transparent shadow-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0d3b66]" data-target="panel-esg" aria-controls="panel-esg">
+              <button class="value-node group col-start-1 row-start-3 p-0 bg-transparent shadow-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0d3b66]" data-target="panel-esg" aria-controls="panel-esg">
                 <img src="assets/Bottom%20Leftt.svg" alt="Impacto Local y Licencia Social" class="w-32 h-32 md:w-40 md:h-40 object-contain transition-transform duration-300 group-hover:scale-105">
               </button>
+              <!-- Bottom Center spacer -->
+              <div class="col-start-2 row-start-3"></div>
               <!-- Bottom Right → Beneficios (panel-investor) -->
-              <button class="value-node group p-0 bg-transparent shadow-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0d3b66]" data-target="panel-investor" aria-controls="panel-investor">
+              <button class="value-node group col-start-3 row-start-3 p-0 bg-transparent shadow-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0d3b66]" data-target="panel-investor" aria-controls="panel-investor">
                 <img src="assets/Bottom%20Right.svg" alt="Beneficios Operativos y al Inversor" class="w-32 h-32 md:w-40 md:h-40 object-contain transition-transform duration-300 group-hover:scale-105">
-              </button>
-              <!-- Center → Visión (panel-vision) -->
-              <button class="value-node group p-0 bg-transparent shadow-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0d3b66]" data-target="panel-vision" aria-controls="panel-vision">
-                <img src="assets/Center.svg" alt="Visión Estratégica" class="w-36 h-36 md:w-44 md:h-44 object-contain transition-transform duration-300 group-hover:scale-105">
               </button>
             </div>
           </div>
