@@ -45,14 +45,34 @@
     .info-panel { display: none; border-left: 4px solid #10B981; }
     .info-panel.active { display: block; }
   /* Split panels initial overlap & transitions */
-    #risk-reality #split-left, #risk-reality #split-right { transition: transform 600ms cubic-bezier(.2,.65,.2,1); }
+    #risk-reality #split-left, #risk-reality #split-right { transition: transform 650ms cubic-bezier(.2,.65,.2,1); }
     /* Start slightly overlapped for drama on entry */
-    #risk-reality #split-left { transform: translateX(5%); }
-    #risk-reality #split-right { transform: translateX(-5%); }
+    #risk-reality #split-left { transform: translateX(6%); }
+    #risk-reality #split-right { transform: translateX(-6%); }
+    /* Sticky headline when split completes */
+    #split-center-headline.stuck h3 { opacity:1 !important; transform: scale(1.08) !important; text-shadow: 0 6px 30px rgba(0,0,0,.45); }
+    /* Strong focus outlines for accessibility */
+    #value-grid .value-node:focus-visible { outline: 3px solid #0d3b66; outline-offset: 4px; border-radius: 16px; }
   </style>
 
   <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --brand-blue: #0d3b66; }
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans'; }
+    /* Typographic system */
+    .hero-title { font-family: 'Montserrat', sans-serif; font-weight:700; color:#ffffff; font-size: clamp(40px, 8vw, 80px); line-height:1.05; }
+    .hero-subtitle { font-family: 'Inter', sans-serif; font-weight:400; font-size: clamp(20px, 4.2vw, 36px); }
+    .section-title { font-family:'Montserrat', sans-serif !important; font-weight:600 !important; color: var(--brand-blue) !important; font-size: clamp(28px, 4.2vw, 40px) !important; }
+    .h3-title { font-family:'Montserrat', sans-serif; font-weight:500; color: var(--brand-blue); font-size:20px; }
+    p, li { font-family:'Inter', sans-serif; font-weight:400; }
+    /* CTA button */
+    .cta-button { background: var(--brand-blue) !important; color:#fff !important; }
+  </style>
 </head>
 <body class="bg-gray-50">
   <!-- Header -->
@@ -86,6 +106,10 @@
   </header>
 
   <main>
+    <!-- Top Logo (above hero) -->
+    <div class="container-pad py-6 flex justify-center" data-aos="fade" data-aos-duration="700">
+      <img src="assets/TerraNextHorizontal.svg" alt="TerraNext" class="h-12 md:h-14">
+    </div>
     <!-- HERO with parallax background -->
     <section class="relative min-h-[92vh] flex items-center justify-center text-white text-center px-4 overflow-hidden" aria-label="Hero">
       <!-- Replace URL below with /assets/hero.jpg in your repo if desired -->
@@ -97,9 +121,9 @@
           <span class="chip">Parques FV</span>
           <span class="chip">Data Centers</span>
         </div>
-        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">Más Rendimiento. Menos Riesgo.</h1>
-        <h2 class="text-4xl md:text-6xl font-extrabold text-emerald-400">Agua Positiva para su Infraestructura.</h2>
-        <p class="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-gray-200">Transformamos el mayor riesgo de su proyecto en España — la escasez de agua — en su mayor ventaja competitiva y de resiliencia.</p>
+        <h1 class="hero-title">Más Rendimiento. Menos Riesgo.</h1>
+        <h2 class="hero-title" style="color:#38a169">Agua Positiva para su Infraestructura.</h2>
+        <p class="mt-6 max-w-3xl mx-auto text-gray-200 hero-subtitle">Transformamos el mayor riesgo de su proyecto en España — la escasez de agua — en su mayor ventaja competitiva y de resiliencia.</p>
         <a href="#problema" class="mt-10 inline-block cta-button">Descubrir la Solución</a>
       </div>
     </section>
@@ -113,25 +137,27 @@
         <!-- Risk vs. Reality Split -->
         <div id="risk-reality" class="relative mt-12 h-[60vh] md:h-[70vh] rounded-2xl overflow-hidden shadow-xl">
           <!-- Center tagline -->
-          <div class="absolute inset-x-0 top-4 z-20 flex justify-center">
-            <span class="chip shadow">Aquí está su inversión</span>
+          <div id="split-center-headline" class="absolute inset-0 z-20 grid place-items-center pointer-events-none">
+            <h3 class="text-white text-3xl md:text-5xl font-extrabold drop-shadow-xl text-center px-4 opacity-0 transform scale-90 transition-all duration-300">
+              Aquí está su inversión
+            </h3>
           </div>
           <!-- Left: Boom infraestructura -->
-          <div id="split-left" class="absolute inset-y-0 left-0 w-1/2 md:w-[55%] bg-center bg-cover flex items-end justify-center" style="background-image:url('assets/boom infraestructura.jpg')">
+          <div id="split-left" class="absolute inset-y-0 left-0 w-1/2 md:w-[55%] bg-center bg-cover flex items-end justify-center" style="background-image:url('assets/boom_infraestructura.jpg')">
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-black/10"></div>
             <div class="relative z-10 p-6">
               <h3 class="text-white text-2xl md:text-3xl font-extrabold text-center">Boom de Infraestructura en España</h3>
             </div>
           </div>
           <!-- Right: Escasez crítica -->
-          <div id="split-right" class="absolute inset-y-0 right-0 w-1/2 md:w-[55%] bg-center bg-cover flex items-end justify-center" style="background-image:url('assets/Escasez critica.jpg')">
+          <div id="split-right" class="absolute inset-y-0 right-0 w-1/2 md:w-[55%] bg-center bg-cover flex items-end justify-center" style="background-image:url('assets/Escasez_critica.jpg')">
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-black/10"></div>
             <div class="relative z-10 p-6">
               <h3 class="text-white text-2xl md:text-3xl font-extrabold text-center">Escasez Crítica de Agua</h3>
             </div>
           </div>
         </div>
-        <p class="mt-6 text-center text-sm text-gray-500">Deslice para ver el contraste →</p>
+        <p class="mt-6 text-center text-sm text-gray-500">Deslice para ver el contraste ↓</p>
       </div>
     </section>
 
@@ -146,7 +172,7 @@
           <!-- Base: suelo degradado -->
           <img src="assets/suelo_degradado.jpg" alt="Suelo degradado y erosionado" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
           <!-- Reveal: suelo esponja/raíces (masked) -->
-          <img id="soil-reveal" src="assets/soil_sponge.jpg" alt="Perfil de suelo esponja con raíces" class="absolute inset-0 w-full h-full object-cover" style="--reveal:0%; -webkit-mask-image: linear-gradient(to top, black var(--reveal), transparent calc(var(--reveal) + 12%)); mask-image: linear-gradient(to top, black var(--reveal), transparent calc(var(--reveal) + 12%));" loading="lazy">
+          <img id="soil-reveal" src="assets/soil_ponge.jpg" alt="Perfil de suelo esponja con raíces" class="absolute inset-0 w-full h-full object-cover" style="--reveal:0%; -webkit-mask-image: linear-gradient(to top, black var(--reveal), transparent calc(var(--reveal) + 12%)); mask-image: linear-gradient(to top, black var(--reveal), transparent calc(var(--reveal) + 12%));" loading="lazy">
           <!-- Labels -->
           <div class="absolute top-4 left-4 z-10">
             <span class="chip">Antes: suelo compactado</span>
@@ -167,41 +193,37 @@
     <section id="ciclo-valor" class="py-20 md:py-32 bg-white">
       <div class="container-pad">
         <h2 class="section-title" data-aos="fade-up">Nuestro Ciclo de Valor</h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Haga clic en cada anillo para ver cómo conectamos la salud del suelo con el rendimiento del activo.</p>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Haga clic en cada cuadrante para explorar cómo se conecta la salud del suelo con el rendimiento del activo.</p>
         <div class="mt-12 grid lg:grid-cols-2 gap-10 items-center">
-          <div data-aos="zoom-in" data-aos-duration="1000">
-            <svg id="interactive-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama de valor TerraNext">
-              <defs>
-                <path id="path-licencia" d="M 15, 250 A 235,235 0 1 1 485,250 A 235,235 0 1 1 15,250 Z"/>
-                <path id="path-resiliencia" d="M 45, 250 A 205,205 0 1 1 455,250 A 205,205 0 1 1 45,250 Z"/>
-                <path id="path-beneficios" d="M 75, 250 A 175,175 0 1 1 425,250 A 175,175 0 1 1 75,250 Z"/>
-                <path id="path-esponja" d="M 105, 250 A 145,145 0 1 1 395,250 A 145,145 0 1 1 105,250 Z"/>
-              </defs>
-              <g class="svg-group" data-target="panel-esg">
-                <circle class="svg-ring" cx="250" cy="250" r="235"></circle>
-                <text class="svg-text"><textPath href="#path-licencia" startOffset="50%" text-anchor="middle">Impacto Local y Licencia Social</textPath></text>
-              </g>
-              <g class="svg-group" data-target="panel-resilience">
-                <circle class="svg-ring" cx="250" cy="250" r="205"></circle>
-                <text class="svg-text"><textPath href="#path-resiliencia" startOffset="50%" text-anchor="middle">Resiliencia del Activo</textPath></text>
-              </g>
-              <g class="svg-group" data-target="panel-investor">
-                <circle class="svg-ring" cx="250" cy="250" r="175"></circle>
-                <text class="svg-text"><textPath href="#path-beneficios" startOffset="50%" text-anchor="middle">Beneficios Operativos y al Inversor</textPath></text>
-              </g>
-              <g class="svg-group" data-target="panel-solution">
-                <circle class="svg-ring" cx="250" cy="250" r="145"></circle>
-                <text class="svg-text"><textPath href="#path-esponja" startOffset="50%" text-anchor="middle">Suelo Esponja</textPath></text>
-              </g>
-              <g class="svg-group" data-target="panel-vision">
-                <circle cx="250" cy="250" r="110" fill="#F8F9FA" stroke="#E2E8F0" stroke-width="2"></circle>
-                <text class="svg-text" x="250" y="255" text-anchor="middle" font-size="22">Visión Estratégica</text>
-              </g>
-            </svg>
+          <!-- Quadrant Grid (big tap targets) -->
+          <div>
+            <div id="value-grid" class="grid grid-cols-3 gap-6 place-items-center">
+              <!-- Top Left → Suelo Esponja (panel-solution) -->
+              <button class="value-node group col-start-1 row-start-1 p-3 rounded-2xl bg-white shadow hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-emerald-500" data-target="panel-solution" aria-controls="panel-solution">
+                <img src="assets/Top%20Left.svg" alt="Suelo Esponja" class="w-32 h-32 md:w-40 md:h-40 object-contain transition-transform duration-300 group-hover:scale-105">
+              </button>
+              <!-- Top Right → Resiliencia (panel-resilience) -->
+              <button class="value-node group col-start-3 row-start-1 p-3 rounded-2xl bg-white shadow hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-emerald-500" data-target="panel-resilience" aria-controls="panel-resilience">
+                <img src="assets/Top%20Right.svg" alt="Resiliencia del Activo" class="w-32 h-32 md:w-40 md:h-40 object-contain transition-transform duration-300 group-hover:scale-105">
+              </button>
+              <!-- Bottom Left → ESG/licencia (panel-esg) -->
+              <button class="value-node group col-start-1 row-start-3 p-3 rounded-2xl bg-white shadow hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-emerald-500" data-target="panel-esg" aria-controls="panel-esg">
+                <img src="assets/Bottom%20Leftt.svg" alt="Impacto Local y Licencia Social" class="w-32 h-32 md:w-40 md:h-40 object-contain transition-transform duration-300 group-hover:scale-105">
+              </button>
+              <!-- Bottom Right → Beneficios (panel-investor) -->
+              <button class="value-node group col-start-3 row-start-3 p-3 rounded-2xl bg-white shadow hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-emerald-500" data-target="panel-investor" aria-controls="panel-investor">
+                <img src="assets/Bottom%20Right.svg" alt="Beneficios Operativos y al Inversor" class="w-32 h-32 md:w-40 md:h-40 object-contain transition-transform duration-300 group-hover:scale-105">
+              </button>
+              <!-- Center → Visión (panel-vision) -->
+              <button class="value-node group col-start-2 row-start-2 p-4 rounded-2xl bg-white shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-emerald-600" data-target="panel-vision" aria-controls="panel-vision">
+                <img src="assets/Center.svg" alt="Visión Estratégica" class="w-36 h-36 md:w-44 md:h-44 object-contain transition-transform duration-300 group-hover:scale-105">
+              </button>
+            </div>
           </div>
+          <!-- Info Panels (unchanged content) -->
           <div id="info-panels" data-aos="fade-left" data-aos-delay="200">
             <div id="panel-vision" class="info-panel p-6 bg-gray-50 rounded-lg">
-              <h3 class="text-2xl font-bold text-gray-900 mb-3">El Reto: Crecimiento vs. Desertificación</h3>
+              <h3 class="h3-title mb-3">El Reto: Crecimiento vs. Desertificación</h3>
               <ul class="space-y-2 list-disc list-inside text-gray-700">
                 <li>España proyecta +76 GW en FV y ×5 en Data Centers.</li>
                 <li>Esta expansión ocurre sobre un 75% del territorio en riesgo de desertificación.</li>
@@ -209,7 +231,7 @@
               </ul>
             </div>
             <div id="panel-solution" class="info-panel p-6 bg-gray-50 rounded-lg">
-              <h3 class="text-2xl font-bold text-gray-900 mb-3">La Solución: El Suelo Esponja</h3>
+              <h3 class="h3-title mb-3">La Solución: El Suelo Esponja</h3>
               <ul class="space-y-2 list-disc list-inside text-gray-700">
                 <li>Biotecnología y diseño ecohidrológico para regenerar estructura del suelo.</li>
                 <li>Mayor infiltración y retención de agua en el emplazamiento.</li>
@@ -217,7 +239,7 @@
               </ul>
             </div>
             <div id="panel-investor" class="info-panel p-6 bg-gray-50 rounded-lg">
-              <h3 class="text-2xl font-bold text-gray-900 mb-3">Beneficios Operativos y al Inversor</h3>
+              <h3 class="h3-title mb-3">Beneficios Operativos y al Inversor</h3>
               <ul class="space-y-2 list-disc list-inside text-gray-700">
                 <li><b>Productividad FV:</b> Menor temperatura ↑ eficiencia de paneles.</li>
                 <li><b>O&M:</b> Menos soiling y control de vegetación.</li>
@@ -225,7 +247,7 @@
               </ul>
             </div>
             <div id="panel-resilience" class="info-panel p-6 bg-gray-50 rounded-lg">
-              <h3 class="text-2xl font-bold text-gray-900 mb-3">Resiliencia y Continuidad Operativa</h3>
+              <h3 class="h3-title mb-3">Resiliencia y Continuidad Operativa</h3>
               <ul class="space-y-2 list-disc list-inside text-gray-700">
                 <li>Protección contra erosión e inundaciones repentinas.</li>
                 <li>Disponibilidad hídrica para operaciones (limpieza, refrigeración).</li>
@@ -233,7 +255,7 @@
               </ul>
             </div>
             <div id="panel-esg" class="info-panel p-6 bg-gray-50 rounded-lg">
-              <h3 class="text-2xl font-bold text-gray-900 mb-3">Impacto Local y Licencia Social</h3>
+              <h3 class="h3-title mb-3">Impacto Local y Licencia Social</h3>
               <ul class="space-y-2 list-disc list-inside text-gray-700">
                 <li>Metas Water Positive y biodiversidad con métricas.</li>
                 <li>Empleo local en implementación y mantenimiento.</li>
@@ -252,24 +274,24 @@
         <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Del análisis inicial al reporte de impacto.</p>
         <div class="mt-12 grid md:grid-cols-3 gap-8 text-center">
           <div class="p-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="flex justify-center items-center h-24 w-24 bg-emerald-100 rounded-full mx-auto">
-              <svg class="w-12 h-12 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <div class="flex justify-center items-center mx-auto">
+              <img src="assets/Design.svg" alt="Diseño y Construcción" class="w-28 h-28 object-contain transition-transform duration-300 hover:scale-105">
             </div>
-            <h3 class="mt-6 text-xl font-bold">Diseño y Construcción</h3>
+            <h3 class="mt-6 h3-title">Diseño y Construcción</h3>
             <p class="mt-2 text-gray-600">Modelo ecohidrológico y plan de acción a medida.</p>
           </div>
           <div class="p-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="flex justify-center items-center h-24 w-24 bg-emerald-100 rounded-full mx-auto">
-              <svg class="w-12 h-12 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            <div class="flex justify-center items-center mx-auto">
+              <img src="assets/Stacked-Value.svg" alt="Implementación y Operación" class="w-28 h-28 object-contain transition-transform duration-300 hover:scale-105">
             </div>
-            <h3 class="mt-6 text-xl font-bold">Implementación y Operación</h3>
+            <h3 class="mt-6 h3-title">Implementación y Operación</h3>
             <p class="mt-2 text-gray-600">Infiltración, revegetación nativa y monitorización.</p>
           </div>
           <div class="p-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="flex justify-center items-center h-24 w-24 bg-emerald-100 rounded-full mx-auto">
-              <svg class="w-12 h-12 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <div class="flex justify-center items-center mx-auto">
+              <img src="assets/Water-Positive.svg" alt="Verificación y Reporte" class="w-28 h-28 object-contain transition-transform duration-300 hover:scale-105">
             </div>
-            <h3 class="mt-6 text-xl font-bold">Verificación y Reporte</h3>
+            <h3 class="mt-6 h3-title">Verificación y Reporte</h3>
             <p class="mt-2 text-gray-600">Terceros independientes, metodologías líderes (p.ej., VWBA) y créditos de agua.</p>
           </div>
         </div>
@@ -351,21 +373,23 @@
     const menu = document.getElementById('mobile-menu');
     btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
 
-    // Interactive SVG panels
+    // Value grid interactions (5 SVGs → panels)
     document.addEventListener('DOMContentLoaded', () => {
-      const svg = document.getElementById('interactive-svg');
-      if (!svg) return;
-      const groups = svg.querySelectorAll('.svg-group');
+      const nodes = document.querySelectorAll('#value-grid .value-node');
       const panels = document.querySelectorAll('.info-panel');
-      const activate = (id, group) => {
-        groups.forEach(g => g.classList.remove('active'));
+      const activate = (id) => {
         panels.forEach(p => p.classList.remove('active'));
-        group?.classList.add('active');
         document.getElementById(id)?.classList.add('active');
       };
-      const first = svg.querySelector('[data-target="panel-vision"]');
-      if (first) activate('panel-vision', first);
-      groups.forEach(g => g.addEventListener('click', () => activate(g.dataset.target, g)));
+      // Default open: vision
+      activate('panel-vision');
+      nodes.forEach(n => {
+        n.setAttribute('tabindex','0');
+        n.addEventListener('click', () => activate(n.dataset.target));
+        n.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(n.dataset.target); }
+        });
+      });
     });
 
     // Simple parallax controller
@@ -390,19 +414,33 @@
       onScroll();
     })();
 
-    // Scroll-driven split panels (Risk vs Reality)
+    // Scroll-driven split panels (Risk vs Reality) + sticky headline hold
     (function(){
       const section = document.getElementById('risk-reality');
       if(!section) return;
       const left = document.getElementById('split-left');
       const right = document.getElementById('split-right');
+      const headlineWrap = document.getElementById('split-center-headline');
+      const headline = headlineWrap?.querySelector('h3');
+      const hint = section.parentElement.querySelector('p.mt-6');
+      let stuck = false;
       const onScroll = () => {
         const rect = section.getBoundingClientRect();
         const h = Math.max(1, rect.height - window.innerHeight);
         const progress = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight + h)));
-        const shift = 18 * progress; // %
-        left.style.transform = `translateX(${-shift + 5}%)`;
-        right.style.transform = `translateX(${shift - 5}%)`;
+        const shift = 35 * progress; // %
+        left.style.transform = `translateX(${-shift + 6}%)`;
+        right.style.transform = `translateX(${shift - 6}%)`;
+        // Headline grows in and brightens as the panels part
+        const o = Math.min(1, Math.max(0, (progress - 0.2) / 0.5));
+        if (headline) {
+          headline.style.opacity = o.toFixed(2);
+          headline.style.transform = `scale(${0.9 + o * 0.15})`;
+        }
+        if (hint) hint.style.opacity = (1 - o).toFixed(2);
+        // Sticky hold with hysteresis (stick near the end, release when scrolling back sufficiently)
+        if (!stuck && progress > 0.9) { stuck = true; headlineWrap?.classList.add('stuck'); }
+        else if (stuck && progress < 0.8) { stuck = false; headlineWrap?.classList.remove('stuck'); }
       };
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
