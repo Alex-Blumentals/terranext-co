@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TerraNext – Soluciones Water-Positive para Parques FV y Data Centers</title>
+  <meta name="description" content="TerraNext convierte el riesgo hídrico en una ventaja competitiva con soluciones Water-Positive para parques fotovoltaicos y data centers en España." />
+  <meta name="theme-color" content="#047857" />
+  <meta property="og:title" content="TerraNext – Water-Positive" />
+  <meta property="og:description" content="Más rendimiento. Menos riesgo. Agua Positiva para su infraestructura." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&auto=format&fit=crop" />
+
+  <!-- Tailwind (Play CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind @apply support in-browser -->
+  <style type="text/tailwindcss">
+    body { @apply bg-gray-50 text-gray-900 antialiased; }
+    .section-title { @apply text-3xl md:text-4xl font-extrabold text-gray-900 text-center; }
+    .section-subtitle { @apply mt-4 text-lg md:text-xl text-gray-600 text-center max-w-3xl mx-auto; }
+    .cta-button { @apply px-8 py-4 bg-emerald-600 text-white font-bold text-lg rounded-lg hover:bg-emerald-700 transition-colors duration-300 shadow-lg; }
+    .chip { @apply inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-700; }
+    .container-pad { @apply container mx-auto px-6; }
+    .glass { @apply bg-white/80 backdrop-blur-md; }
+    .ring-card { @apply bg-white rounded-xl shadow-lg p-6; }
+  </style>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    html, body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol' }
+    /* Smooth anchor offset for fixed header */
+    :target { scroll-margin-top: 96px; }
+    /* Parallax utility (JS-driven via transform) */
+    .parallax { will-change: transform; backface-visibility: hidden; transform: translate3d(0,0,0); }
+
+    /* Interactive SVG styles */
+    .svg-ring { fill: none; stroke: #A0AEC0; stroke-width: 10; transition: stroke 300ms ease; }
+    .svg-text { fill: #A0AEC0; font-size: 18px; font-weight: 600; transition: fill 300ms ease; pointer-events: none; }
+    .svg-group { cursor: pointer; }
+    .svg-group.active .svg-ring, .svg-group:hover .svg-ring { stroke: #10B981; }
+    .svg-group.active .svg-text, .svg-group:hover .svg-text { fill: #10B981; }
+    .info-panel { display: none; border-left: 4px solid #10B981; }
+    .info-panel.active { display: block; }
+  /* Split panels initial overlap & transitions */
+    #risk-reality #split-left, #risk-reality #split-right { transition: transform 600ms cubic-bezier(.2,.65,.2,1); }
+    /* Start slightly overlapped for drama on entry */
+    #risk-reality #split-left { transform: translateX(5%); }
+    #risk-reality #split-right { transform: translateX(-5%); }
+  </style>
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+  <!-- Header -->
+  <header class="glass fixed top-0 inset-x-0 z-50 shadow-sm">
+    <div class="container-pad py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2">
+        <svg class="w-10 h-10 text-emerald-600" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20Zm-1.5 14.5L6 12l1.41-1.41 3.09 3.09 6.09-6.09L18 9l-7.5 7.5Z"/></svg>
+        <span class="text-2xl font-extrabold">TerraNext</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#problema" class="text-gray-700 hover:text-emerald-700 font-semibold">El Desafío</a>
+        <a href="#solucion" class="text-gray-700 hover:text-emerald-700 font-semibold">La Solución</a>
+        <a href="#ciclo-valor" class="text-gray-700 hover:text-emerald-700 font-semibold">Nuestro Valor</a>
+        <a href="#analisis" class="text-gray-700 hover:text-emerald-700 font-semibold">Análisis</a>
+        <a href="#contacto" class="px-5 py-2 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700">Contacto</a>
+      </nav>
+      <button id="mobile-menu-button" class="md:hidden text-gray-700" aria-label="Abrir menú">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100">
+      <div class="container-pad py-3 grid gap-2">
+        <a href="#problema" class="py-2">El Desafío</a>
+        <a href="#solucion" class="py-2">La Solución</a>
+        <a href="#ciclo-valor" class="py-2">Nuestro Valor</a>
+        <a href="#analisis" class="py-2">Análisis</a>
+        <a href="#contacto" class="py-2">Contacto</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO with parallax background -->
+    <section class="relative min-h-[92vh] flex items-center justify-center text-white text-center px-4 overflow-hidden" aria-label="Hero">
+      <!-- Replace URL below with /assets/hero.jpg in your repo if desired -->
+      <div id="hero-bg" class="absolute inset-0 bg-cover bg-center parallax" data-parallax-speed="0.35" style="background-image:url('assets/Hero.png');"></div>
+      <div class="absolute inset-0 bg-black/60"></div>
+      <div class="relative z-10 container-pad" data-aos="fade-up" data-aos-duration="1000">
+        <div class="inline-flex flex-wrap items-center justify-center gap-2 mb-5">
+          <span class="chip">Water-Positive</span>
+          <span class="chip">Parques FV</span>
+          <span class="chip">Data Centers</span>
+        </div>
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">Más Rendimiento. Menos Riesgo.</h1>
+        <h2 class="text-4xl md:text-6xl font-extrabold text-emerald-400">Agua Positiva para su Infraestructura.</h2>
+        <p class="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-gray-200">Transformamos el mayor riesgo de su proyecto en España — la escasez de agua — en su mayor ventaja competitiva y de resiliencia.</p>
+        <a href="#problema" class="mt-10 inline-block cta-button">Descubrir la Solución</a>
+      </div>
+    </section>
+
+    <!-- PROBLEMA split cards -->
+    <section id="problema" class="py-20 md:py-32 bg-white">
+      <div class="container-pad">
+        <h2 class="section-title" data-aos="fade-up">Una Colisión Inminente</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">España enfrenta un crecimiento de infraestructura sin precedentes en un territorio al borde de la crisis hídrica.</p>
+
+        <!-- Risk vs. Reality Split -->
+        <div id="risk-reality" class="relative mt-12 h-[60vh] md:h-[70vh] rounded-2xl overflow-hidden shadow-xl">
+          <!-- Center tagline -->
+          <div class="absolute inset-x-0 top-4 z-20 flex justify-center">
+            <span class="chip shadow">Aquí está su inversión</span>
+          </div>
+          <!-- Left: Boom infraestructura -->
+          <div id="split-left" class="absolute inset-y-0 left-0 w-1/2 md:w-[55%] bg-center bg-cover flex items-end justify-center" style="background-image:url('assets/boom infraestructura.jpg')">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-black/10"></div>
+            <div class="relative z-10 p-6">
+              <h3 class="text-white text-2xl md:text-3xl font-extrabold text-center">Boom de Infraestructura en España</h3>
+            </div>
+          </div>
+          <!-- Right: Escasez crítica -->
+          <div id="split-right" class="absolute inset-y-0 right-0 w-1/2 md:w-[55%] bg-center bg-cover flex items-end justify-center" style="background-image:url('assets/Escasez critica.jpg')">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-black/10"></div>
+            <div class="relative z-10 p-6">
+              <h3 class="text-white text-2xl md:text-3xl font-extrabold text-center">Escasez Crítica de Agua</h3>
+            </div>
+          </div>
+        </div>
+        <p class="mt-6 text-center text-sm text-gray-500">Deslice para ver el contraste →</p>
+      </div>
+    </section>
+
+    <!-- SOLUCIÓN parallax split images -->
+    <section id="solucion" class="relative py-20 md:py-32 bg-gray-50 overflow-hidden">
+      <div class="container-pad">
+        <h2 class="section-title" data-aos="fade-up">No Combatimos la Sequía. Cosechamos la Lluvia.</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Parallax Infográfico: de suelo seco a esponja viva que infiltra agua.</p>
+
+        <!-- Parallax Soil Profile Infographic -->
+        <figure id="soil-infographic" class="relative mt-12 h-[120vh] md:h-[150vh] rounded-2xl overflow-hidden shadow-xl">
+          <!-- Base: suelo degradado -->
+          <img src="assets/suelo degradado.jpg" alt="Suelo degradado y erosionado" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+          <!-- Reveal: suelo esponja/raíces (masked) -->
+          <img id="soil-reveal" src="assets/soil sponge.jpg" alt="Perfil de suelo esponja con raíces" class="absolute inset-0 w-full h-full object-cover" style="--reveal:0%; -webkit-mask-image: linear-gradient(to top, black var(--reveal), transparent calc(var(--reveal) + 12%)); mask-image: linear-gradient(to top, black var(--reveal), transparent calc(var(--reveal) + 12%));" loading="lazy">
+          <!-- Labels -->
+          <div class="absolute top-4 left-4 z-10">
+            <span class="chip">Antes: suelo compactado</span>
+          </div>
+          <div class="absolute bottom-4 right-4 z-10">
+            <span class="chip">Después: esponja biológica de raíces</span>
+          </div>
+        </figure>
+        <div class="mt-6 grid md:grid-cols-3 gap-6 text-center">
+          <div class="ring-card"><h3 class="font-bold">Infiltración</h3><p class="text-gray-600 mt-1">La estructura porosa aumenta la entrada de lluvia.</p></div>
+          <div class="ring-card"><h3 class="font-bold">Retención</h3><p class="text-gray-600 mt-1">Materias orgánicas y raíces almacenan agua útil.</p></div>
+          <div class="ring-card"><h3 class="font-bold">Recarga</h3><p class="text-gray-600 mt-1">Flujos lentos que alimentan el acuífero local.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CICLO DE VALOR (interactive SVG + info panels) -->
+    <section id="ciclo-valor" class="py-20 md:py-32 bg-white">
+      <div class="container-pad">
+        <h2 class="section-title" data-aos="fade-up">Nuestro Ciclo de Valor</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Haga clic en cada anillo para ver cómo conectamos la salud del suelo con el rendimiento del activo.</p>
+        <div class="mt-12 grid lg:grid-cols-2 gap-10 items-center">
+          <div data-aos="zoom-in" data-aos-duration="1000">
+            <svg id="interactive-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama de valor TerraNext">
+              <defs>
+                <path id="path-licencia" d="M 15, 250 A 235,235 0 1 1 485,250 A 235,235 0 1 1 15,250 Z"/>
+                <path id="path-resiliencia" d="M 45, 250 A 205,205 0 1 1 455,250 A 205,205 0 1 1 45,250 Z"/>
+                <path id="path-beneficios" d="M 75, 250 A 175,175 0 1 1 425,250 A 175,175 0 1 1 75,250 Z"/>
+                <path id="path-esponja" d="M 105, 250 A 145,145 0 1 1 395,250 A 145,145 0 1 1 105,250 Z"/>
+              </defs>
+              <g class="svg-group" data-target="panel-esg">
+                <circle class="svg-ring" cx="250" cy="250" r="235"></circle>
+                <text class="svg-text"><textPath href="#path-licencia" startOffset="50%" text-anchor="middle">Impacto Local y Licencia Social</textPath></text>
+              </g>
+              <g class="svg-group" data-target="panel-resilience">
+                <circle class="svg-ring" cx="250" cy="250" r="205"></circle>
+                <text class="svg-text"><textPath href="#path-resiliencia" startOffset="50%" text-anchor="middle">Resiliencia del Activo</textPath></text>
+              </g>
+              <g class="svg-group" data-target="panel-investor">
+                <circle class="svg-ring" cx="250" cy="250" r="175"></circle>
+                <text class="svg-text"><textPath href="#path-beneficios" startOffset="50%" text-anchor="middle">Beneficios Operativos y al Inversor</textPath></text>
+              </g>
+              <g class="svg-group" data-target="panel-solution">
+                <circle class="svg-ring" cx="250" cy="250" r="145"></circle>
+                <text class="svg-text"><textPath href="#path-esponja" startOffset="50%" text-anchor="middle">Suelo Esponja</textPath></text>
+              </g>
+              <g class="svg-group" data-target="panel-vision">
+                <circle cx="250" cy="250" r="110" fill="#F8F9FA" stroke="#E2E8F0" stroke-width="2"></circle>
+                <text class="svg-text" x="250" y="255" text-anchor="middle" font-size="22">Visión Estratégica</text>
+              </g>
+            </svg>
+          </div>
+          <div id="info-panels" data-aos="fade-left" data-aos-delay="200">
+            <div id="panel-vision" class="info-panel p-6 bg-gray-50 rounded-lg">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">El Reto: Crecimiento vs. Desertificación</h3>
+              <ul class="space-y-2 list-disc list-inside text-gray-700">
+                <li>España proyecta +76 GW en FV y ×5 en Data Centers.</li>
+                <li>Esta expansión ocurre sobre un 75% del territorio en riesgo de desertificación.</li>
+                <li>Nuestra visión: convertir el riesgo hídrico en ventaja estratégica.</li>
+              </ul>
+            </div>
+            <div id="panel-solution" class="info-panel p-6 bg-gray-50 rounded-lg">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">La Solución: El Suelo Esponja</h3>
+              <ul class="space-y-2 list-disc list-inside text-gray-700">
+                <li>Biotecnología y diseño ecohidrológico para regenerar estructura del suelo.</li>
+                <li>Mayor infiltración y retención de agua en el emplazamiento.</li>
+                <li>Recarga de acuíferos y control de erosión medible.</li>
+              </ul>
+            </div>
+            <div id="panel-investor" class="info-panel p-6 bg-gray-50 rounded-lg">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Beneficios Operativos y al Inversor</h3>
+              <ul class="space-y-2 list-disc list-inside text-gray-700">
+                <li><b>Productividad FV:</b> Menor temperatura ↑ eficiencia de paneles.</li>
+                <li><b>O&M:</b> Menos soiling y control de vegetación.</li>
+                <li><b>Retorno verificable:</b> Eco-créditos e incremento de valor.</li>
+              </ul>
+            </div>
+            <div id="panel-resilience" class="info-panel p-6 bg-gray-50 rounded-lg">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Resiliencia y Continuidad Operativa</h3>
+              <ul class="space-y-2 list-disc list-inside text-gray-700">
+                <li>Protección contra erosión e inundaciones repentinas.</li>
+                <li>Disponibilidad hídrica para operaciones (limpieza, refrigeración).</li>
+                <li>Mitiga riesgos regulatorios y climáticos a 20+ años.</li>
+              </ul>
+            </div>
+            <div id="panel-esg" class="info-panel p-6 bg-gray-50 rounded-lg">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Impacto Local y Licencia Social</h3>
+              <ul class="space-y-2 list-disc list-inside text-gray-700">
+                <li>Metas Water Positive y biodiversidad con métricas.</li>
+                <li>Empleo local en implementación y mantenimiento.</li>
+                <li>Relación sólida con la comunidad y resiliencia local.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO TRABAJAMOS -->
+    <section class="py-20 md:py-32 bg-gray-50">
+      <div class="container-pad">
+        <h2 class="section-title" data-aos="fade-up">Proceso Transparente y Verificable</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Del análisis inicial al reporte de impacto.</p>
+        <div class="mt-12 grid md:grid-cols-3 gap-8 text-center">
+          <div class="p-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="flex justify-center items-center h-24 w-24 bg-emerald-100 rounded-full mx-auto">
+              <svg class="w-12 h-12 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="mt-6 text-xl font-bold">Diseño y Construcción</h3>
+            <p class="mt-2 text-gray-600">Modelo ecohidrológico y plan de acción a medida.</p>
+          </div>
+          <div class="p-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="flex justify-center items-center h-24 w-24 bg-emerald-100 rounded-full mx-auto">
+              <svg class="w-12 h-12 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            </div>
+            <h3 class="mt-6 text-xl font-bold">Implementación y Operación</h3>
+            <p class="mt-2 text-gray-600">Infiltración, revegetación nativa y monitorización.</p>
+          </div>
+          <div class="p-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="flex justify-center items-center h-24 w-24 bg-emerald-100 rounded-full mx-auto">
+              <svg class="w-12 h-12 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="mt-6 text-xl font-bold">Verificación y Reporte</h3>
+            <p class="mt-2 text-gray-600">Terceros independientes, metodologías líderes (p.ej., VWBA) y créditos de agua.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANÁLISIS & CASOS -->
+    <section id="analisis" class="py-20 md:py-32 bg-white">
+      <div class="container-pad">
+        <h2 class="section-title" data-aos="fade-up">Análisis y Casos de Éxito</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Datos, industria y resultados Water-Positive.</p>
+        <div class="mt-12 grid md:grid-cols-3 gap-8">
+          <article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1621568422079-a530f3a846c4?q=80&w=2070&auto=format&fit=crop" alt="Análisis de datos" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <p class="text-sm font-semibold text-emerald-600">ESTADÍSTICAS</p>
+              <h3 class="mt-2 text-xl font-bold text-gray-900">El Coste Oculto del Soiling en Parques FV</h3>
+              <p class="mt-3 text-gray-600">Cómo la degradación del suelo impacta los costes de O&M.</p>
+              <a href="#" class="mt-4 inline-block font-semibold text-emerald-700 hover:text-emerald-800">Leer más →</a>
+            </div>
+          </article>
+          <article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1556742502-ec7c0ef34b1?q=80&w=1974&auto=format&fit=crop" alt="Revisión de planos" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <p class="text-sm font-semibold text-emerald-600">CASO DE ÉXITO</p>
+              <h3 class="mt-2 text-xl font-bold text-gray-900">Cómo un Data Center en Aragón fue Water-Positive</h3>
+              <p class="mt-3 text-gray-600">De riesgo hídrico a ventaja comunitaria y de negocio.</p>
+              <a href="#" class="mt-4 inline-block font-semibold text-emerald-700 hover:text-emerald-800">Leer más →</a>
+            </div>
+          </article>
+          <article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="300">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop" alt="Gráficos de rendimiento" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <p class="text-sm font-semibold text-emerald-600">INFORME TÉCNICO</p>
+              <h3 class="mt-2 text-xl font-bold text-gray-900">Midiendo la Infiltración: Metodología y Verificación</h3>
+              <p class="mt-3 text-gray-600">Medir, verificar y certificar cada litro recargado.</p>
+              <a href="#" class="mt-4 inline-block font-semibold text-emerald-700 hover:text-emerald-800">Leer más →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section id="contacto" class="relative overflow-hidden bg-emerald-800 text-white">
+      <div class="absolute inset-0 opacity-20 parallax" data-parallax-speed="0.1" style="background-image: radial-gradient(1000px 600px at 10% 10%, rgba(255,255,255,.35), transparent), radial-gradient(900px 500px at 90% 90%, rgba(255,255,255,.25), transparent);"></div>
+      <div class="container-pad py-20 md:py-32 text-center relative z-10" data-aos="zoom-in">
+        <h2 class="text-3xl md:text-4xl font-extrabold">¿Listo para convertir el riesgo hídrico en rentabilidad?</h2>
+        <p class="mt-4 text-lg md:text-xl text-emerald-200 max-w-2xl mx-auto">Hablemos de cómo un enfoque Water-Positive asegura el futuro de su inversión.</p>
+        <a href="mailto:andrea@terranext.co" class="mt-10 inline-block px-10 py-5 bg-white text-emerald-700 font-bold text-lg rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-2xl">Solicitar un Análisis de Impacto</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400">
+    <div class="container-pad py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-2">
+        <svg class="w-8 h-8 text-emerald-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20Zm-1.5 14.5L6 12l1.41-1.41 3.09 3.09 6.09-6.09L18 9l-7.5 7.5Z"/></svg>
+        <span class="text-xl font-bold text-white">TerraNext</span>
+      </div>
+      <nav class="flex gap-6">
+        <a href="#" class="hover:text-white">Aviso Legal</a>
+        <a href="#" class="hover:text-white">Privacidad</a>
+        <a href="#" class="hover:text-white">Cookies</a>
+        <a href="#" class="hover:text-white">LinkedIn</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Init AOS
+    AOS.init({ duration: 800, once: true });
+
+    // Mobile menu
+    const btn = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+    btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+
+    // Interactive SVG panels
+    document.addEventListener('DOMContentLoaded', () => {
+      const svg = document.getElementById('interactive-svg');
+      if (!svg) return;
+      const groups = svg.querySelectorAll('.svg-group');
+      const panels = document.querySelectorAll('.info-panel');
+      const activate = (id, group) => {
+        groups.forEach(g => g.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        group?.classList.add('active');
+        document.getElementById(id)?.classList.add('active');
+      };
+      const first = svg.querySelector('[data-target="panel-vision"]');
+      if (first) activate('panel-vision', first);
+      groups.forEach(g => g.addEventListener('click', () => activate(g.dataset.target, g)));
+    });
+
+    // Simple parallax controller
+    (function() {
+      const items = Array.from(document.querySelectorAll('[data-parallax-speed]'));
+      if (!items.length) return;
+      let ticking = false;
+      const onScroll = () => {
+        if (ticking) return; ticking = true;
+        requestAnimationFrame(() => {
+          const viewportH = window.innerHeight;
+          for (const el of items) {
+            const speed = parseFloat(el.getAttribute('data-parallax-speed') || '0');
+            const rect = el.getBoundingClientRect();
+            const offset = ((rect.top + rect.height/2) - viewportH/2) * speed * -0.25;
+            el.style.transform = `translate3d(0, ${offset.toFixed(2)}px, 0)`;
+          }
+          ticking = false;
+        });
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+
+    // Scroll-driven split panels (Risk vs Reality)
+    (function(){
+      const section = document.getElementById('risk-reality');
+      if(!section) return;
+      const left = document.getElementById('split-left');
+      const right = document.getElementById('split-right');
+      const onScroll = () => {
+        const rect = section.getBoundingClientRect();
+        const h = Math.max(1, rect.height - window.innerHeight);
+        const progress = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight + h)));
+        const shift = 18 * progress; // %
+        left.style.transform = `translateX(${-shift + 5}%)`;
+        right.style.transform = `translateX(${shift - 5}%)`;
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+
+    // Scroll-driven soil reveal (dry → sponge)
+    (function(){
+      const fig = document.getElementById('soil-infographic');
+      const reveal = document.getElementById('soil-reveal');
+      if(!fig || !reveal) return;
+      const onScroll = () => {
+        const r = fig.getBoundingClientRect();
+        const scrollable = r.height - Math.min(window.innerHeight, r.height);
+        const p = Math.min(1, Math.max(0, (window.innerHeight - r.top) / (window.innerHeight + scrollable)));
+        const percent = (p * 100).toFixed(1) + '%';
+        reveal.style.setProperty('--reveal', percent);
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>
