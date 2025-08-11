@@ -79,7 +79,7 @@
   <header class="glass fixed top-0 inset-x-0 z-50 shadow-sm">
     <div class="container-pad py-3 flex items-center justify-between">
       <a href="#" class="flex items-center gap-3">
-        <img src="assets/TerraNextHorizontal.svg" alt="TerraNext" class="h-10 w-auto md:h-12"/>
+        <img src="assets/TerraNextHorizontal.svg" alt="TerraNext" class="h-16 w-auto md:h-20"/>
       </a>
       <nav class="hidden md:flex items-center gap-8">
         <a href="#problema" class="text-gray-700 hover:text-emerald-700 font-semibold">El Desafío</a>
@@ -106,7 +106,6 @@
 
   <main><!-- HERO with parallax background -->
     <section class="relative min-h-[92vh] flex items-center justify-center text-white text-center px-4 overflow-hidden" aria-label="Hero">
-      <!-- Replace URL below with /assets/hero.jpg in your repo if desired -->
       <div id="hero-bg" class="absolute inset-0 bg-cover bg-center parallax" data-parallax-speed="0.35" style="background-image:url('assets/Hero.png');"></div>
       <div class="absolute inset-0 bg-black/60"></div>
       <div class="relative z-10 container-pad" data-aos="fade-up" data-aos-duration="1000">
@@ -126,51 +125,14 @@
     <section id="problema" class="py-20 md:py-32 bg-white">
       <div class="container-pad">
         <h2 class="section-title" data-aos="fade-up">Una Colisión Inminente</h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">España enfrenta un crecimiento de infraestructura sin precedentes en un territorio al borde de la crisis hídrica.</p>
-
-        <!-- Risk vs. Reality Split -->
-        <div id="risk-reality" class="relative mt-12 h-[60vh] md:h-[70vh] rounded-2xl overflow-hidden shadow-xl">
-          <!-- Center tagline -->
-          <div id="split-center-headline" class="absolute inset-0 z-20 grid place-items-center pointer-events-none">
-            <div id="split-center-box" class="rounded-2xl px-6 py-4 bg-[rgba(13,59,102,0.75)] backdrop-blur-md border border-white/20 shadow-2xl opacity-0 transform scale-90 transition-all duration-300">
-              <h3 class="text-white text-2xl md:text-4xl font-extrabold drop-shadow-xl text-center">Aquí está su inversión</h3>
-              <ul id="center-bubbles" class="mt-3 grid grid-cols-2 gap-2 text-white/90 text-xs md:text-sm font-semibold">
-                <li class="px-3 py-1 rounded-full bg-white/15">Costos ocultos</li>
-                <li class="px-3 py-1 rounded-full bg-white/15">Daños</li>
-                <li class="px-3 py-1 rounded-full bg-white/15">Resistencia social</li>
-                <li class="px-3 py-1 rounded-full bg-white/15">Riesgo operativo</li>
-              </ul>
-            </div>
-          </div>
-          </div>
-          <!-- Left: Boom infraestructura -->
-          <div id="split-left" class="absolute inset-y-0 left-0 w-1/2 md:w-[55%] bg-center bg-cover flex items-start justify-center pt-10 md:pt-12" style="background-image:url('assets/boom_infraestructura.jpg')">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-black/10"></div>
-            <div class="relative z-10 p-0"><h3 class="text-white text-2xl md:text-4xl font-extrabold text-center leading-tight">Boom de Infraestructura en España</h3></div>
-          </div>
-          <!-- Right: Escasez crítica -->
-          <div id="split-right" class="absolute inset-y-0 right-0 w-1/2 md:w-[55%] bg-center bg-cover flex items-start justify-center pt-10 md:pt-12" style="background-image:url('assets/Escasez_critica.jpg')">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-black/10"></div>
-            <div class="relative z-10 p-0"><h3 class="text-white text-2xl md:text-4xl font-extrabold text-center leading-tight">Escasez Crítica de Agua</h3></div>
-          </div>
-        </div>
-        <p class="mt-6 text-center text-sm text-gray-500">Deslice para ver el contraste ↓</p>
-      </div>
-    </section>
-
-    <!-- SOLUCIÓN parallax split images -->
-    <section id="solucion" class="relative py-20 md:py-32 bg-gray-50 overflow-hidden">
-      <div class="container-pad">
-        <h2 class="section-title" data-aos="fade-up">No Combatimos la Sequía. Cosechamos la Lluvia.</h2>
         <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100"><span class="font-semibold" style="color:#0d3b66">Creando una Esponja de Suelo Vivo</span>: raíces que infiltran agua.</p>
 
         <!-- Parallax Soil Profile Infographic -->
         <figure id="soil-infographic" class="relative mt-12 h-[120vh] md:h-[150vh] rounded-2xl overflow-hidden shadow-xl">
           <!-- Optional small loop video on top third -->
-          <video id="soil-loop" class="absolute top-0 inset-x-0 h-1/3 w-full object-cover opacity-90 z-20" autoplay muted loop playsinline poster="assets/suelo_degradado.jpg">
+          <video id="soil-loop" class="absolute top-0 inset-x-0 h-1/3 w-full object-cover opacity-90 z-20" autoplay muted loop playsinline poster="assets/soil_ponge.jpg">
             <source src="assets/soil-loop.mp4" type="video/mp4" />
           </video>
-          <!-- Base: suelo degradado -->
           <!-- Reveal: suelo esponja/raíces (masked) -->
           <img id="soil-reveal" src="assets/soil_ponge.jpg" alt="Perfil de suelo esponja con raíces" class="absolute inset-0 w-full h-full object-cover z-30" style="--reveal:0%; -webkit-mask-image: linear-gradient(to top, black var(--reveal), transparent calc(var(--reveal) + 12%)); mask-image: linear-gradient(to top, black var(--reveal), transparent calc(var(--reveal) + 12%));" loading="lazy">
           <!-- Overlay heading for prominence -->
@@ -198,34 +160,34 @@
         <div class="mt-12 grid lg:grid-cols-2 gap-10 items-center group hover:scale-[1.015] transition-transform duration-500">
           <!-- Quadrant Grid (big tap targets) -->
           <div>
-            <div id="value-grid" class="grid grid-cols-3 grid-rows-3 gap-2 place-items-center">
+            <div id="value-grid" class="mx-auto grid grid-cols-3 grid-rows-3 gap-0 place-items-center scale-100 hover:scale-[1.01] transition-transform duration-400" style="max-width: min(92vw, 720px)">
               <!-- Top Left → Suelo Esponja (panel-solution) -->
               <button class="value-node group col-start-1 row-start-1 p-0 bg-transparent shadow-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0d3b66]" data-target="panel-solution" aria-controls="panel-solution">
-                <img src="assets/Top%20Left.svg" alt="Suelo Esponja" class="w-44 h-44 md:w-56 md:h-56 -m-1 object-contain transition-transform duration-300 group-hover:scale-105">
+                <img src="assets/Top%20Left.svg" class="block w-48 h-48 md:w-64 md:h-64 -m-[6px]">
               </button>
               <!-- Top Center spacer -->
               <div class="col-start-2 row-start-1"></div>
               <!-- Top Right → Resiliencia (panel-resilience) -->
               <button class="value-node group col-start-3 row-start-1 p-0 bg-transparent shadow-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0d3b66]" data-target="panel-resilience" aria-controls="panel-resilience">
-                <img src="assets/Top%20Right.svg" alt="Resiliencia del Activo" class="w-44 h-44 md:w-56 md:h-56 -m-1 object-contain transition-transform duration-300 group-hover:scale-105">
+                <img src="assets/Top%20Right.svg" class="block w-48 h-48 md:w-64 md:h-64 -m-[6px]">
               </button>
               <!-- Middle Left spacer -->
               <div class="col-start-1 row-start-2"></div>
               <!-- Center → Visión (panel-vision) -->
               <button class="value-node group col-start-2 row-start-2 p-0 bg-transparent shadow-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0d3b66]" data-target="panel-vision" aria-controls="panel-vision">
-                <img src="assets/Center.svg" alt="Visión Estratégica" class="w-48 h-48 md:w-60 md:h-60 -m-1 object-contain transition-transform duration-300 group-hover:scale-105">
+                <img src="assets/Center.svg" class="block w-56 h-56 md:w-72 md:h-72 -m-[6px]">
               </button>
               <!-- Middle Right spacer -->
               <div class="col-start-3 row-start-2"></div>
               <!-- Bottom Left → ESG/licencia (panel-esg) -->
               <button class="value-node group col-start-1 row-start-3 p-0 bg-transparent shadow-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0d3b66]" data-target="panel-esg" aria-controls="panel-esg">
-                <img src="assets/Bottom%20Leftt.svg" alt="Impacto Local y Licencia Social" class="w-44 h-44 md:w-56 md:h-56 -m-1 object-contain transition-transform duration-300 group-hover:scale-105">
+                <img src="assets/Bottom%20Leftt.svg" class="block w-48 h-48 md:w-64 md:h-64 -m-[6px]">
               </button>
               <!-- Bottom Center spacer -->
               <div class="col-start-2 row-start-3"></div>
               <!-- Bottom Right → Beneficios (panel-investor) -->
               <button class="value-node group col-start-3 row-start-3 p-0 bg-transparent shadow-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0d3b66]" data-target="panel-investor" aria-controls="panel-investor">
-                <img src="assets/Bottom%20Right.svg" alt="Beneficios Operativos y al Inversor" class="w-44 h-44 md:w-56 md:h-56 -m-1 object-contain transition-transform duration-300 group-hover:scale-105">
+                <img src="assets/Bottom%20Right.svg" class="block w-48 h-48 md:w-64 md:h-64 -m-[6px]">
               </button>
             </div>
           </div>
@@ -535,8 +497,9 @@
       const left = document.getElementById('split-left');
       const right = document.getElementById('split-right');
       const headlineWrap = document.getElementById('split-center-headline');
-      const centerBox = document.getElementById('split-center-box');
-      const headline = centerBox?.querySelector('h3');
+      const headline = document.getElementById('split-center-text');
+      const topB = document.getElementById('center-top-bubbles');
+      const botB = document.getElementById('center-bottom-bubbles');
       const hint = section.parentElement.querySelector('p.mt-6');
       let stuck = false;
       const onScroll = () => {
@@ -549,9 +512,13 @@
         // Compute gap between panels (approx % of width)
         const gap = Math.max(0, (shift * 2) - 12);
         const appear = progress > 0.55 ? (Math.min(1, (progress - 0.55) / 0.25)) : 0; // appear later
-        if (centerBox) {
-          centerBox.style.opacity = appear.toFixed(2);
-          centerBox.style.transform = `scale(${0.9 + appear * 0.2})`;
+        if (headline) {
+          const o = Math.min(1, Math.max(0, (progress - 0.6) / 0.25));
+          headline.style.opacity = o.toFixed(2);
+          headline.style.transform = `scale(${0.9 + o * 0.15})`;
+        }
+        if (topB) topB.style.opacity = (progress > 0.7 ? 1 : 0);
+        if (botB) botB.style.opacity = (progress > 0.8 ? 1 : 0);)`;
           centerBox.style.width = `${Math.min(70, Math.max(20, gap))}%`;
         }
         if (hint) hint.style.opacity = (1 - appear).toFixed(2);
