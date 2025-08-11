@@ -5,81 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TerraNext – Soluciones Water-Positive para Parques FV y Data Centers</title>
   <meta name="description" content="TerraNext convierte el riesgo hídrico en una ventaja competitiva con soluciones Water-Positive para parques fotovoltaicos y data centers en España." />
-  <meta name="theme-color" content="#047857" />
+  <meta name="theme-color" content="#0d3b66" />
   <meta property="og:title" content="TerraNext – Water-Positive" />
   <meta property="og:description" content="Más rendimiento. Menos riesgo. Agua Positiva para su infraestructura." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&auto=format&fit=crop" />
 
   <!-- Tailwind (Play CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Tailwind @apply support in-browser -->
-  <style type="text/tailwindcss">
-    body { @apply bg-gray-50 text-gray-900 antialiased; }
-    .section-title { @apply text-3xl md:text-4xl font-extrabold text-gray-900 text-center; }
-    .section-subtitle { @apply mt-4 text-lg md:text-xl text-gray-600 text-center max-w-3xl mx-auto; }
-    .cta-button { @apply px-8 py-4 bg-emerald-600 text-white font-bold text-lg rounded-lg hover:bg-emerald-700 transition-colors duration-300 shadow-lg; }
-    .chip { @apply inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-700; }
-    .container-pad { @apply container mx-auto px-6; }
-    .glass { @apply bg-white/80 backdrop-blur-md; }
-    .ring-card { @apply bg-white rounded-xl shadow-lg p-6; }
-  </style>
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    html, body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol' }
-    /* Smooth anchor offset for fixed header */
-    :target { scroll-margin-top: 96px; }
-    /* Parallax utility (JS-driven via transform) */
-    .parallax { will-change: transform; backface-visibility: hidden; transform: translate3d(0,0,0); }
-
-    /* Interactive SVG styles */
-    .svg-ring { fill: none; stroke: #A0AEC0; stroke-width: 10; transition: stroke 300ms ease; }
-    .svg-text { fill: #A0AEC0; font-size: 18px; font-weight: 600; transition: fill 300ms ease; pointer-events: none; }
-    .svg-group { cursor: pointer; }
-    .svg-group.active .svg-ring, .svg-group:hover .svg-ring { stroke: #10B981; }
-    .svg-group.active .svg-text, .svg-group:hover .svg-text { fill: #10B981; }
-    .info-panel { display: none; border-left: 4px solid #10B981; }
-    .info-panel.active { display: block; }
-  /* Split panels initial overlap & transitions */
-    #risk-reality #split-left, #risk-reality #split-right { transition: transform 650ms cubic-bezier(.2,.65,.2,1); }
-    /* Start slightly overlapped for drama on entry */
-    #risk-reality #split-left { transform: translateX(6%); }
-    #risk-reality #split-right { transform: translateX(-6%); }
-    /* Sticky headline when split completes */
-    #split-center-headline.stuck #split-center-box { opacity:1 !important; transform: scale(1.04) !important; box-shadow: 0 20px 60px rgba(0,0,0,.35); }
-    /* Strong focus outlines for accessibility */
-    #value-grid .value-node:focus-visible { outline: 3px solid #0d3b66; outline-offset: 4px; border-radius: 16px; }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet" />
 
   <!-- AOS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
   <style>
     :root { --brand-blue: #0d3b66; }
-    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans'; }
-    /* Typographic system */
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial; background:#f8fafc; color:#111827; }
+    /* Typography system */
     .hero-title { font-family: 'Montserrat', sans-serif; font-weight:700; color:#ffffff; font-size: clamp(40px, 8vw, 80px); line-height:1.05; }
-    .hero-subtitle { font-family: 'Inter', sans-serif; font-weight:400; font-size: clamp(20px, 4.2vw, 36px); }
-    .section-title { font-family:'Montserrat', sans-serif !important; font-weight:600 !important; color: var(--brand-blue) !important; font-size: clamp(28px, 4.2vw, 40px) !important; }
-    .h3-title { font-family:'Montserrat', sans-serif; font-weight:500; color: var(--brand-blue); font-size:20px; }
-    p, li { font-family:'Inter', sans-serif; font-weight:400; }
-    /* CTA button */
-    .cta-button { background: var(--brand-blue) !important; color:#fff !important; }
+    .hero-subtitle { font-family:'Inter',sans-serif; font-weight:400; font-size: clamp(18px, 4vw, 36px); }
+    .section-title { font-family:'Montserrat',sans-serif; font-weight:600; color:var(--brand-blue); font-size: clamp(28px, 4.2vw, 40px); text-align:center;}
+    .h3-title { font-family:'Montserrat',sans-serif; font-weight:500; color:var(--brand-blue); font-size:20px; }
+    p, li { font-family:'Inter',sans-serif; font-weight:400; }
+    .chip { display:inline-flex; align-items:center; gap:.4rem; border-radius:999px; background:#ECFDF5; padding:.2rem .6rem; font-size:.9rem; font-weight:600; color:#065F46;}
+    .cta-button { background: var(--brand-blue); color:#fff; padding:.9rem 2rem; border-radius:.7rem; font-weight:700; transition:transform .2s, box-shadow .2s; display:inline-block; }
+    .cta-button:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(13,59,102,.2); }
+    .glass { background: rgba(255,255,255,.75); backdrop-filter: blur(10px); }
+    .container-pad { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* Split panels */
+    #risk-reality #split-left, #risk-reality #split-right { transition: transform 650ms cubic-bezier(.2,.65,.2,1); }
+    #risk-reality #split-left { transform: translateX(6%); }
+    #risk-reality #split-right { transform: translateX(-6%); }
+    #split-center-text { transition: opacity .35s, transform .35s; }
+
+    /* Info panels */
+    .info-panel { display:none; border-left:4px solid #10B981; }
+    .info-panel.active { display:block; }
+
+    /* Value tiles tighten */
+    #value-grid { gap:4px; }
+    .value-node { overflow:hidden; }
+    .value-node img.tile-img { display:block; margin:-10px; transform-origin:center; }
+
+    /* Accessibility focus */
+    .value-node:focus-visible { outline:3px solid #0d3b66; outline-offset:4px; border-radius:16px; }
+
+    /* Smooth anchor offset for fixed header */
+    :target { scroll-margin-top: 96px; }
   </style>
 </head>
-<body class="bg-gray-50">
+<body>
   <!-- Header -->
   <header class="glass fixed top-0 inset-x-0 z-50 shadow-sm">
     <div class="container-pad py-3 flex items-center justify-between">
       <a href="#" class="flex items-center gap-3">
-        <img src="assets/TerraNextHorizontal.svg" alt="TerraNext" class="h-16 w-auto md:h-20"/>
+        <!-- logo doubled -->
+        <img src="assets/TerraNextHorizontal.svg" alt="TerraNext" class="h-16 w-auto md:h-20" />
       </a>
       <nav class="hidden md:flex items-center gap-8">
         <a href="#problema" class="text-gray-700 hover:text-emerald-700 font-semibold">El Desafío</a>
@@ -104,11 +88,12 @@
     </div>
   </header>
 
-  <main><!-- HERO with parallax background -->
+  <main>
+    <!-- HERO -->
     <section class="relative min-h-[92vh] flex items-center justify-center text-white text-center px-4 overflow-hidden" aria-label="Hero">
-      <div id="hero-bg" class="absolute inset-0 bg-cover bg-center parallax" data-parallax-speed="0.35" style="background-image:url('assets/Hero.png');"></div>
-      <div class="absolute inset-0 bg-black/60"></div>
-      <div class="relative z-10 container-pad" data-aos="fade-up" data-aos-duration="1000">
+      <div id="hero-bg" class="absolute inset-0 bg-cover bg-center parallax z-0" data-parallax-speed="0.35" style="background-image:url('assets/Hero.png');"></div>
+      <div class="absolute inset-0 bg-black/60 z-10"></div>
+      <div class="relative z-20 container-pad" data-aos="fade-up" data-aos-duration="1000">
         <div class="inline-flex flex-wrap items-center justify-center gap-2 mb-5">
           <span class="chip">Water-Positive</span>
           <span class="chip">Parques FV</span>
@@ -116,27 +101,77 @@
         </div>
         <h1 class="hero-title">Más Rendimiento. Menos Riesgo.</h1>
         <h2 class="hero-title" style="color:#38a169">Agua Positiva para su Infraestructura.</h2>
-        <p class="mt-6 max-w-3xl mx-auto text-gray-200 hero-subtitle">Transformamos el mayor riesgo de su proyecto en España — la escasez de agua — en su mayor ventaja competitiva y de resiliencia.</p>
-        <a href="#problema" class="mt-10 inline-block cta-button">Descubrir la Solución</a>
+        <p class="mt-6 max-w-3xl mx-auto text-gray-200 hero-subtitle">
+          Transformamos el mayor riesgo de su proyecto en España — la escasez de agua — en su mayor ventaja competitiva y de resiliencia.
+        </p>
+        <a href="#problema" class="mt-10 cta-button">Descubrir la Solución</a>
       </div>
     </section>
 
-    <!-- PROBLEMA split cards -->
+    <!-- COLISIÓN INMINENTE -->
     <section id="problema" class="py-20 md:py-32 bg-white">
       <div class="container-pad">
         <h2 class="section-title" data-aos="fade-up">Una Colisión Inminente</h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100"><span class="font-semibold" style="color:#0d3b66">Creando una Esponja de Suelo Vivo</span>: raíces que infiltran agua.</p>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+          España enfrenta un crecimiento de infraestructura sin precedentes en un territorio al borde de la crisis hídrica.
+        </p>
 
-        <!-- Parallax Soil Profile Infographic -->
+        <!-- Split -->
+        <div id="risk-reality" class="relative mt-12 h-[60vh] md:h-[70vh] rounded-2xl overflow-hidden shadow-xl">
+          <!-- Center headline + floating chips -->
+          <div id="split-center-headline" class="absolute inset-0 z-20 grid place-items-center pointer-events-none">
+            <h3 id="split-center-text" class="text-white text-2xl md:text-4xl font-extrabold drop-shadow-xl text-center opacity-0 transform scale-90">Aquí está su inversión</h3>
+            <div id="center-top-bubbles" class="absolute inset-x-0 top-1/2 -translate-y-[calc(100%+40px)] flex flex-wrap items-center justify-center gap-2 opacity-0">
+              <span class="px-3 py-1 rounded-full bg-white/20 text-white text-xs md:text-sm font-semibold">Costos ocultos</span>
+              <span class="px-3 py-1 rounded-full bg-white/20 text-white text-xs md:text-sm font-semibold">Daños</span>
+            </div>
+            <div id="center-bottom-bubbles" class="absolute inset-x-0 top-1/2 translate-y-[calc(100%+40px)] flex flex-wrap items-center justify-center gap-2 opacity-0">
+              <span class="px-3 py-1 rounded-full bg-white/20 text-white text-xs md:text-sm font-semibold">Resistencia social</span>
+              <span class="px-3 py-1 rounded-full bg-white/20 text-white text-xs md:text-sm font-semibold">Riesgo operativo</span>
+            </div>
+          </div>
+
+          <!-- Left -->
+          <div id="split-left" class="absolute inset-y-0 left-0 w-1/2 md:w-[55%] bg-center bg-cover flex items-start justify-center pt-10 md:pt-10"
+               style="background-image:url('assets/boom_infraestructura.jpg')">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-black/10"></div>
+            <div class="relative z-10 p-0">
+              <h3 class="text-white text-2xl md:text-4xl font-extrabold text-center leading-tight">Boom de Infraestructura en España</h3>
+            </div>
+          </div>
+          <!-- Right -->
+          <div id="split-right" class="absolute inset-y-0 right-0 w-1/2 md:w-[55%] bg-center bg-cover flex items-start justify-center pt-10 md:pt-10"
+               style="background-image:url('assets/Escasez_critica.jpg')">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-black/10"></div>
+            <div class="relative z-10 p-0">
+              <h3 class="text-white text-2xl md:text-4xl font-extrabold text-center leading-tight">Escasez Crítica de Agua</h3>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-6 text-center text-sm text-gray-500">Deslice para ver el contraste ↓</p>
+      </div>
+    </section>
+
+    <!-- SOLUCIÓN -->
+    <section id="solucion" class="relative py-20 md:py-32 bg-gray-50 overflow-hidden">
+      <div class="container-pad">
+        <h2 class="section-title" data-aos="fade-up">No Combatimos la Sequía. Cosechamos la Lluvia.</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+          <span class="font-semibold" style="color:#0d3b66">Creando una Esponja de Suelo Vivo</span>: raíces que infiltran agua.
+        </p>
+
+        <!-- Parallax soil -->
         <figure id="soil-infographic" class="relative mt-12 h-[120vh] md:h-[150vh] rounded-2xl overflow-hidden shadow-xl">
-          <!-- Optional small loop video on top third -->
+          <!-- video strip (top third) -->
           <video id="soil-loop" class="absolute top-0 inset-x-0 h-1/3 w-full object-cover opacity-90 z-20" autoplay muted loop playsinline poster="assets/soil_ponge.jpg">
-            <source src="assets/soil-loop.mp4" type="video/mp4" />
+            <source src="assets/soil-loop.mp4" type="video/mp4"/>
           </video>
-          <!-- Reveal: suelo esponja/raíces (masked) -->
-          <img id="soil-reveal" src="assets/soil_ponge.jpg" alt="Perfil de suelo esponja con raíces" class="absolute inset-0 w-full h-full object-cover z-30" style="--reveal:0%; -webkit-mask-image: linear-gradient(to top, black var(--reveal), transparent calc(var(--reveal) + 12%)); mask-image: linear-gradient(to top, black var(--reveal), transparent calc(var(--reveal) + 12%));" loading="lazy">
-          <!-- Overlay heading for prominence -->
-          <!-- Labels (bigger) -->
+          <!-- Reveal: sponge roots (no base image per your request) -->
+          <img id="soil-reveal" src="assets/soil_ponge.jpg" alt="Perfil de suelo esponja con raíces"
+               class="absolute inset-0 w-full h-full object-cover z-30"
+               style="--reveal:0%; -webkit-mask-image: linear-gradient(to top, black var(--reveal), transparent calc(var(--reveal) + 12%)); mask-image: linear-gradient(to top, black var(--reveal), transparent calc(var(--reveal) + 12%));" />
+          <!-- Labels -->
           <div class="absolute top-5 left-5 z-40">
             <span class="inline-flex items-center px-4 py-2 text-base md:text-lg rounded-full bg-white/85 text-gray-900 shadow">Antes: suelo compactado</span>
           </div>
@@ -144,61 +179,56 @@
             <span class="inline-flex items-center px-4 py-2 text-base md:text-lg rounded-full bg-emerald-600/95 text-white shadow">Después: esponja biológica de raíces</span>
           </div>
         </figure>
-        <div class="mt-6 grid md:grid-cols-3 gap-6 text-center">
-          <div class="ring-card"><h3 class="font-bold">Infiltración</h3><p class="text-gray-600 mt-1">La estructura porosa aumenta la entrada de lluvia.</p></div>
-          <div class="ring-card"><h3 class="font-bold">Retención</h3><p class="text-gray-600 mt-1">Materias orgánicas y raíces almacenan agua útil.</p></div>
-          <div class="ring-card"><h3 class="font-bold">Recarga</h3><p class="text-gray-600 mt-1">Flujos lentos que alimentan el acuífero local.</p></div>
+
+        <div class="mt-8 grid md:grid-cols-3 gap-6 text-center">
+          <div class="bg-white rounded-xl shadow-lg p-6"><h3 class="h3-title">Infiltración</h3><p class="text-gray-600 mt-1">La estructura porosa aumenta la entrada de lluvia.</p></div>
+          <div class="bg-white rounded-xl shadow-lg p-6"><h3 class="h3-title">Retención</h3><p class="text-gray-600 mt-1">Materia orgánica y raíces almacenan agua útil.</p></div>
+          <div class="bg-white rounded-xl shadow-lg p-6"><h3 class="h3-title">Recarga</h3><p class="text-gray-600 mt-1">Flujos lentos que alimentan el acuífero local.</p></div>
         </div>
       </div>
     </section>
 
-    <!-- CICLO DE VALOR (interactive SVG + info panels) -->
+    <!-- NUESTRO CICLO DE VALOR -->
     <section id="ciclo-valor" class="py-20 md:py-32 bg-white">
       <div class="container-pad">
         <h2 class="section-title" data-aos="fade-up">Nuestro Ciclo de Valor</h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Haga clic en cada cuadrante para explorar cómo se conecta la salud del suelo con el rendimiento del activo.</p>
-        <div class="mt-12 grid lg:grid-cols-2 gap-10 items-center group hover:scale-[1.015] transition-transform duration-500">
-          <!-- Quadrant Grid (big tap targets) -->
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Haga clic en cada cuadrante para explorar el valor.</p>
+
+        <div class="mt-12 grid lg:grid-cols-2 gap-10 items-center">
+          <!-- Tight grid -->
           <div>
-            <div id="value-grid" class="mx-auto grid grid-cols-3 grid-rows-3 gap-0 place-items-center scale-100 hover:scale-[1.01] transition-transform duration-400" style="max-width: min(92vw, 720px)">
-              <!-- Top Left → Suelo Esponja (panel-solution) -->
-              <button class="value-node group col-start-1 row-start-1 p-0 bg-transparent shadow-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0d3b66]" data-target="panel-solution" aria-controls="panel-solution">
-                <img src="assets/Top%20Left.svg" class="block w-48 h-48 md:w-64 md:h-64 -m-[6px]">
+            <div id="value-grid" class="mx-auto grid grid-cols-3 grid-rows-3 place-items-center scale-100 hover:scale-[1.01] transition-transform duration-400" style="max-width:min(92vw,780px)">
+              <!-- Top Left -->
+              <button class="value-node group col-start-1 row-start-1 p-0 bg-transparent shadow-none focus:outline-none" data-target="panel-solution" aria-controls="panel-solution" tabindex="0">
+                <img src="assets/Top Left.svg" alt="Suelo Esponja" class="tile-img w-48 h-48 md:w-64 md:h-64 scale-[1.06]">
               </button>
-              <!-- Top Center spacer -->
-              <div class="col-start-2 row-start-1"></div>
-              <!-- Top Right → Resiliencia (panel-resilience) -->
-              <button class="value-node group col-start-3 row-start-1 p-0 bg-transparent shadow-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0d3b66]" data-target="panel-resilience" aria-controls="panel-resilience">
-                <img src="assets/Top%20Right.svg" class="block w-48 h-48 md:w-64 md:h-64 -m-[6px]">
+              <!-- Top Right -->
+              <button class="value-node group col-start-3 row-start-1 p-0 bg-transparent shadow-none focus:outline-none" data-target="panel-resilience" aria-controls="panel-resilience" tabindex="0">
+                <img src="assets/Top Right.svg" alt="Resiliencia del Activo" class="tile-img w-48 h-48 md:w-64 md:h-64 scale-[1.06]">
               </button>
-              <!-- Middle Left spacer -->
-              <div class="col-start-1 row-start-2"></div>
-              <!-- Center → Visión (panel-vision) -->
-              <button class="value-node group col-start-2 row-start-2 p-0 bg-transparent shadow-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0d3b66]" data-target="panel-vision" aria-controls="panel-vision">
-                <img src="assets/Center.svg" class="block w-56 h-56 md:w-72 md:h-72 -m-[6px]">
+              <!-- Center -->
+              <button class="value-node group col-start-2 row-start-2 p-0 bg-transparent shadow-none focus:outline-none" data-target="panel-vision" aria-controls="panel-vision" tabindex="0">
+                <img src="assets/Center.svg" alt="Visión Estratégica" class="tile-img w-56 h-56 md:w-72 md:h-72 scale-[1.04]">
               </button>
-              <!-- Middle Right spacer -->
-              <div class="col-start-3 row-start-2"></div>
-              <!-- Bottom Left → ESG/licencia (panel-esg) -->
-              <button class="value-node group col-start-1 row-start-3 p-0 bg-transparent shadow-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0d3b66]" data-target="panel-esg" aria-controls="panel-esg">
-                <img src="assets/Bottom%20Leftt.svg" class="block w-48 h-48 md:w-64 md:h-64 -m-[6px]">
+              <!-- Bottom Left -->
+              <button class="value-node group col-start-1 row-start-3 p-0 bg-transparent shadow-none focus:outline-none" data-target="panel-esg" aria-controls="panel-esg" tabindex="0">
+                <img src="assets/Bottom Leftt.svg" alt="Impacto Local y Licencia Social" class="tile-img w-48 h-48 md:w-64 md:h-64 scale-[1.06]">
               </button>
-              <!-- Bottom Center spacer -->
-              <div class="col-start-2 row-start-3"></div>
-              <!-- Bottom Right → Beneficios (panel-investor) -->
-              <button class="value-node group col-start-3 row-start-3 p-0 bg-transparent shadow-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0d3b66]" data-target="panel-investor" aria-controls="panel-investor">
-                <img src="assets/Bottom%20Right.svg" class="block w-48 h-48 md:w-64 md:h-64 -m-[6px]">
+              <!-- Bottom Right -->
+              <button class="value-node group col-start-3 row-start-3 p-0 bg-transparent shadow-none focus:outline-none" data-target="panel-investor" aria-controls="panel-investor" tabindex="0">
+                <img src="assets/Bottom Right.svg" alt="Beneficios Operativos y al Inversor" class="tile-img w-48 h-48 md:w-64 md:h-64 scale-[1.06]">
               </button>
             </div>
           </div>
-          <!-- Info Panels (unchanged content) -->
+
+          <!-- Panels -->
           <div id="info-panels" data-aos="fade-left" data-aos-delay="200">
             <div id="panel-vision" class="info-panel p-6 bg-gray-50 rounded-lg">
               <h3 class="h3-title mb-3">El Reto: Crecimiento vs. Desertificación</h3>
               <ul class="space-y-2 list-disc list-inside text-gray-700">
                 <li>España proyecta +76 GW en FV y ×5 en Data Centers.</li>
-                <li>Esta expansión ocurre sobre un 75% del territorio en riesgo de desertificación.</li>
-                <li>Nuestra visión: convertir el riesgo hídrico en ventaja estratégica.</li>
+                <li>Expansión sobre un 75% del territorio en riesgo de desertificación.</li>
+                <li>Visión: convertir el riesgo hídrico en ventaja estratégica.</li>
               </ul>
             </div>
             <div id="panel-solution" class="info-panel p-6 bg-gray-50 rounded-lg">
@@ -238,7 +268,7 @@
       </div>
     </section>
 
-    <!-- CÓMO TRABAJAMOS -->
+    <!-- NUESTRO PROCESO -->
     <section class="py-20 md:py-32 bg-gray-50">
       <div class="container-pad">
         <h2 class="section-title" data-aos="fade-up">Proceso Transparente y Verificable</h2>
@@ -263,7 +293,7 @@
               <img src="assets/Water-Positive.svg" alt="Verificación y Reporte" class="w-28 h-28 object-contain transition-transform duration-300 hover:scale-105">
             </div>
             <h3 class="mt-6 h3-title">Verificación y Reporte</h3>
-            <p class="mt-2 text-gray-600">Terceros independientes, metodologías líderes (p.ej., VWBA) y créditos de agua.</p>
+            <p class="mt-2 text-gray-600">Terceros independientes (p. ej., VWBA) y créditos de agua.</p>
           </div>
         </div>
       </div>
@@ -275,7 +305,6 @@
         <h2 class="section-title" data-aos="fade-up">Análisis y Casos de Éxito</h2>
         <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Datos, industria y resultados Water-Positive.</p>
 
-        <!-- Cards -->
         <div class="mt-12 grid md:grid-cols-3 gap-8">
           <!-- Artículo 1 -->
           <article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
@@ -283,8 +312,7 @@
             <div class="p-6 flex flex-col h-full">
               <p class="text-sm font-semibold text-emerald-600">RESILIENCIA</p>
               <h3 class="mt-2 text-xl font-bold text-gray-900">Resiliencia Climática Desde el Suelo</h3>
-              <p class="mt-3 text-gray-600">El suelo sano modera extremos climáticos, protege activos y reduce OPEX.
-              </p>
+              <p class="mt-3 text-gray-600">El suelo sano modera extremos climáticos, protege activos y reduce OPEX.</p>
               <button class="mt-4 inline-flex items-center justify-center gap-2 font-semibold text-emerald-700 hover:text-emerald-800 underline underline-offset-4" data-open-article="resiliencia">
                 Leer más
               </button>
@@ -296,8 +324,7 @@
             <div class="p-6 flex flex-col h-full">
               <p class="text-sm font-semibold text-emerald-600">CRISIS DEL SUELO</p>
               <h3 class="mt-2 text-xl font-bold text-gray-900">Crisis Bajo los Pies de España</h3>
-              <p class="mt-3 text-gray-600">La pérdida de la función esponja dispara costes, inundaciones y sequías.
-              </p>
+              <p class="mt-3 text-gray-600">La pérdida de la función esponja dispara costes, inundaciones y sequías.</p>
               <button class="mt-4 inline-flex items-center justify-center gap-2 font-semibold text-emerald-700 hover:text-emerald-800 underline underline-offset-4" data-open-article="crisis">
                 Leer más
               </button>
@@ -305,12 +332,11 @@
           </article>
           <!-- Artículo 3 -->
           <article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="300">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&auto=format&fit=crop" alt="Sala de servidores" class="w-full h-48 object-cover">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1600&auto=format&fit=crop" alt="Sala de servidores" class="w-full h-48 object-cover">
             <div class="p-6 flex flex-col h-full">
               <p class="text-sm font-semibold text-emerald-600">DATA CENTERS</p>
-              <h3 class="mt-2 text-xl font-bold text-gray-900">Desafío Water‑Positive para Data Centers</h3>
-              <p class="mt-3 text-gray-600">De consumidores a proveedores netos de agua mediante recarga in situ.
-              </p>
+              <h3 class="mt-2 text-xl font-bold text-gray-900">Desafío Water-Positive para Data Centers</h3>
+              <p class="mt-3 text-gray-600">De consumidores a proveedores netos de agua mediante recarga in situ.</p>
               <button class="mt-4 inline-flex items-center justify-center gap-2 font-semibold text-emerald-700 hover:text-emerald-800 underline underline-offset-4" data-open-article="dc-water">
                 Leer más
               </button>
@@ -337,14 +363,14 @@
         <div data-title>Resiliencia Climática Desde el Suelo – La Defensa Natural de la Infraestructura</div>
         <div data-image src="assets/soil_ponge.jpg"></div>
         <div data-body>
-          <p>La ola de inversión en infraestructura en España coincide con extremos climáticos cada vez más intensos. La defensa climática más costo‑efectiva no es otra obra dura: es el <strong>suelo saludable</strong>, que modera temperaturas, absorbe lluvias extremas y crea microclimas estables.</p>
+          <p>La ola de inversión en infraestructura en España coincide con extremos climáticos cada vez más intensos. La defensa climática más costo-efectiva no es otra obra dura: es el <strong>suelo saludable</strong>, que modera temperaturas, absorbe lluvias extremas y crea microclimas estables.</p>
           <h4>Protección climática que no se ve</h4>
           <ul>
             <li><strong>Regulación térmica:</strong> enfriamiento por evapotranspiración (−5 a −8&nbsp;°C); superficies −20 a −30&nbsp;°C vs. suelo desnudo.</li>
             <li><strong>Estabilización hídrica:</strong> infiltración que evita inundaciones y recarga acuíferos.</li>
             <li><strong>Continuidad operativa:</strong> condiciones estables que reducen OPEX y alargan la vida útil de equipos.</li>
           </ul>
-          <h4>Integración tecno‑natural</h4>
+          <h4>Integración tecno-natural</h4>
           <p>Sensores, riego de apoyo y gestión predictiva optimizan el rendimiento del sistema vivo para proteger activos críticos.</p>
         </div>
       </template>
@@ -362,7 +388,7 @@
       </template>
 
       <template id="tpl-dc-water">
-        <div data-title>Desafío Water‑Positive para Data Centers</div>
+        <div data-title>Desafío Water-Positive para Data Centers</div>
         <div data-image src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1600&auto=format&fit=crop"></div>
         <div data-body>
           <p>Los data centers son la nueva clase de gran consumidor hídrico en regiones ya estresadas. La respuesta no es solo eficiencia: es <strong>diseño de cuenca</strong> para pasar de consumidor a proveedor neto de agua.</p>
@@ -372,7 +398,7 @@
             <li>Evaporativos estándar: 1–3&nbsp;L/kWh</li>
             <li>Equipos antiguos: 5–10&nbsp;L/kWh</li>
           </ul>
-          <h4>Marco Water‑Positive</h4>
+          <h4>Marco Water-Positive</h4>
           <p>Recarga in situ, recuperación total del agua de proceso, alianzas comunitarias y verificación independiente.</p>
           <h4>Ventajas</h4>
           <p>Menor riesgo, preferencia regulatoria, mejor ESG e impulso a la viabilidad a largo plazo.</p>
@@ -389,44 +415,12 @@
         <a href="mailto:andrea@terranext.co" class="mt-10 inline-block px-10 py-5 bg-white text-emerald-700 font-bold text-lg rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-2xl">Solicitar un Análisis de Impacto</a>
       </div>
     </section>
-  
-    <!-- Article modal script -->
-    <script>
-      (function(){
-        const modal = document.getElementById('article-modal');
-        if (!modal) return;
-        const title = document.getElementById('article-title');
-        const figure = document.querySelector('#article-figure img');
-        const body = document.getElementById('article-body');
-        const openers = document.querySelectorAll('[data-open-article]');
-        const closeEls = modal.querySelectorAll('[data-close-article]');
-        const templates = {
-          resiliencia: document.getElementById('tpl-resiliencia'),
-          crisis: document.getElementById('tpl-crisis'),
-          'dc-water': document.getElementById('tpl-dc-water'),
-        };
-        const open = (key) => {
-          const tpl = templates[key];
-          if (!tpl) return;
-          title.textContent = tpl.content.querySelector('[data-title]').textContent;
-          figure.src = tpl.content.querySelector('[data-image]').getAttribute('src');
-          body.innerHTML = tpl.content.querySelector('[data-body]').innerHTML;
-          modal.classList.remove('hidden');
-          document.body.style.overflow = 'hidden';
-        };
-        const close = () => { modal.classList.add('hidden'); document.body.style.overflow = ''; };
-        openers.forEach(btn => btn.addEventListener('click', () => open(btn.dataset.openArticle)));
-        closeEls.forEach(el => el.addEventListener('click', close));
-        modal.addEventListener('keydown', (e)=>{ if (e.key==='Escape') close(); });
-      })();
-    </script>
   </main>
 
   <!-- Footer -->
   <footer class="bg-gray-900 text-gray-400">
     <div class="container-pad py-10 flex flex-col md:flex-row items-center justify-between gap-6">
       <div class="flex items-center gap-2">
-        <svg class="w-8 h-8 text-emerald-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20Zm-1.5 14.5L6 12l1.41-1.41 3.09 3.09 6.09-6.09L18 9l-7.5 7.5Z"/></svg>
         <span class="text-xl font-bold text-white">TerraNext</span>
       </div>
       <nav class="flex gap-6">
@@ -448,25 +442,6 @@
     const btn = document.getElementById('mobile-menu-button');
     const menu = document.getElementById('mobile-menu');
     btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
-
-    // Value grid interactions (5 SVGs → panels)
-    document.addEventListener('DOMContentLoaded', () => {
-      const nodes = document.querySelectorAll('#value-grid .value-node');
-      const panels = document.querySelectorAll('.info-panel');
-      const activate = (id) => {
-        panels.forEach(p => p.classList.remove('active'));
-        document.getElementById(id)?.classList.add('active');
-      };
-      // Default open: vision
-      activate('panel-vision');
-      nodes.forEach(n => {
-        n.setAttribute('tabindex','0');
-        n.addEventListener('click', () => activate(n.dataset.target));
-        n.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(n.dataset.target); }
-        });
-      });
-    });
 
     // Simple parallax controller
     (function() {
@@ -490,13 +465,12 @@
       onScroll();
     })();
 
-    // Scroll-driven split panels (Risk vs Reality) + sticky headline hold
+    // Split panels (risk vs reality) + headline & chips timing
     (function(){
       const section = document.getElementById('risk-reality');
       if(!section) return;
       const left = document.getElementById('split-left');
       const right = document.getElementById('split-right');
-      const headlineWrap = document.getElementById('split-center-headline');
       const headline = document.getElementById('split-center-text');
       const topB = document.getElementById('center-top-bubbles');
       const botB = document.getElementById('center-bottom-bubbles');
@@ -509,28 +483,25 @@
         const shift = 35 * progress; // %
         left.style.transform = `translateX(${-shift + 6}%)`;
         right.style.transform = `translateX(${shift - 6}%)`;
-        // Compute gap between panels (approx % of width)
-        const gap = Math.max(0, (shift * 2) - 12);
-        const appear = progress > 0.55 ? (Math.min(1, (progress - 0.55) / 0.25)) : 0; // appear later
-        if (headline) {
-          const o = Math.min(1, Math.max(0, (progress - 0.6) / 0.25));
-          headline.style.opacity = o.toFixed(2);
-          headline.style.transform = `scale(${0.9 + o * 0.15})`;
-        }
-        if (topB) topB.style.opacity = (progress > 0.7 ? 1 : 0);
-        if (botB) botB.style.opacity = (progress > 0.8 ? 1 : 0);)`;
-          centerBox.style.width = `${Math.min(70, Math.max(20, gap))}%`;
-        }
-        if (hint) hint.style.opacity = (1 - appear).toFixed(2);
-        // Sticky hold with hysteresis (stick near the end, release when scrolling back sufficiently)
-        if (!stuck && progress > 0.9) { stuck = true; headlineWrap?.classList.add('stuck'); }
-        else if (stuck && progress < 0.8) { stuck = false; headlineWrap?.classList.remove('stuck'); }
+
+        // Headline
+        const o = Math.min(1, Math.max(0, (progress - 0.6) / 0.25));
+        headline.style.opacity = o.toFixed(2);
+        headline.style.transform = `scale(${0.9 + o * 0.15})`;
+        if (hint) hint.style.opacity = (1 - o).toFixed(2);
+
+        // Chips
+        topB.style.opacity = (progress > 0.70 ? 1 : 0);
+        botB.style.opacity = (progress > 0.80 ? 1 : 0);
+
+        if (!stuck && progress > 0.9) { stuck = true; }
+        else if (stuck && progress < 0.8) { stuck = false; }
       };
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
     })();
 
-    // Scroll-driven soil reveal (dry → sponge)
+    // Soil reveal (clip-path fallback)
     (function(){
       const fig = document.getElementById('soil-infographic');
       const reveal = document.getElementById('soil-reveal');
@@ -539,11 +510,60 @@
         const r = fig.getBoundingClientRect();
         const scrollable = r.height - Math.min(window.innerHeight, r.height);
         const p = Math.min(1, Math.max(0, (window.innerHeight - r.top) / (window.innerHeight + scrollable)));
-        const percent = (p * 100).toFixed(1) + '%';
-        reveal.style.setProperty('--reveal', percent);
+        const pct = (p * 100);
+        reveal.style.setProperty('--reveal', pct.toFixed(1) + '%');
+        const bottomInset = (100 - pct).toFixed(1) + '%';
+        reveal.style.clipPath = `inset(0 0 ${bottomInset} 0)`;
       };
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
+    })();
+
+    // Value grid interactions (5 SVGs → panels)
+    (function () {
+      const nodes = document.querySelectorAll('#value-grid .value-node');
+      const panels = document.querySelectorAll('.info-panel');
+      const activate = (id) => {
+        panels.forEach(p => p.classList.remove('active'));
+        document.getElementById(id)?.classList.add('active');
+      };
+      // Default open
+      activate('panel-vision');
+      nodes.forEach(n => {
+        n.addEventListener('click', () => activate(n.dataset.target));
+        n.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(n.dataset.target); }
+        });
+      });
+    })();
+
+    // Article modal
+    (function(){
+      const modal = document.getElementById('article-modal');
+      if (!modal) return;
+      const title = document.getElementById('article-title');
+      const figure = document.querySelector('#article-figure img');
+      const body = document.getElementById('article-body');
+      const openers = document.querySelectorAll('[data-open-article]');
+      const closeEls = modal.querySelectorAll('[data-close-article], .bg-black\\/60');
+      const templates = {
+        resiliencia: document.getElementById('tpl-resiliencia'),
+        crisis: document.getElementById('tpl-crisis'),
+        'dc-water': document.getElementById('tpl-dc-water'),
+      };
+      const open = (key) => {
+        const tpl = templates[key];
+        if (!tpl) return;
+        title.textContent = tpl.content.querySelector('[data-title]').textContent;
+        figure.src = tpl.content.querySelector('[data-image]').getAttribute('src');
+        body.innerHTML = tpl.content.querySelector('[data-body]').innerHTML;
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      };
+      const close = () => { modal.classList.add('hidden'); document.body.style.overflow = ''; };
+      openers.forEach(btn => btn.addEventListener('click', () => open(btn.dataset.openArticle)));
+      closeEls.forEach(el => el.addEventListener('click', close));
+      modal.addEventListener('keydown', (e)=>{ if (e.key==='Escape') close(); });
     })();
   </script>
 </body>
