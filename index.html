@@ -78,9 +78,8 @@
   <!-- Header -->
   <header class="glass fixed top-0 inset-x-0 z-50 shadow-sm">
     <div class="container-pad py-3 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2">
-        <svg class="w-10 h-10 text-emerald-600" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20Zm-1.5 14.5L6 12l1.41-1.41 3.09 3.09 6.09-6.09L18 9l-7.5 7.5Z"/></svg>
-        <span class="text-2xl font-extrabold">TerraNext</span>
+      <a href="#" class="flex items-center gap-3">
+        <img src="assets/TerraNextHorizontal.svg" alt="TerraNext" class="h-10 w-auto md:h-12"/>
       </a>
       <nav class="hidden md:flex items-center gap-8">
         <a href="#problema" class="text-gray-700 hover:text-emerald-700 font-semibold">El Desafío</a>
@@ -105,12 +104,7 @@
     </div>
   </header>
 
-  <main>
-    <!-- Top Logo (above hero) -->
-    <div class="container-pad py-6 flex justify-center" data-aos="fade" data-aos-duration="700">
-      <img src="assets/TerraNextHorizontal.svg" alt="TerraNext" class="h-12 md:h-14 w-auto block" loading="eager">
-    </div>
-    <!-- HERO with parallax background -->
+  <main><!-- HERO with parallax background -->
     <section class="relative min-h-[92vh] flex items-center justify-center text-white text-center px-4 overflow-hidden" aria-label="Hero">
       <!-- Replace URL below with /assets/hero.jpg in your repo if desired -->
       <div id="hero-bg" class="absolute inset-0 bg-cover bg-center parallax" data-parallax-speed="0.35" style="background-image:url('assets/Hero.png');"></div>
@@ -139,18 +133,25 @@
           <!-- Center tagline -->
           <div id="split-center-headline" class="absolute inset-0 z-20 grid place-items-center pointer-events-none">
             <div id="split-center-box" class="rounded-2xl px-6 py-4 bg-[rgba(13,59,102,0.75)] backdrop-blur-md border border-white/20 shadow-2xl opacity-0 transform scale-90 transition-all duration-300">
-              <h3 class="text-white text-3xl md:text-5xl font-extrabold drop-shadow-xl text-center">Aquí está su inversión</h3>
+              <h3 class="text-white text-2xl md:text-4xl font-extrabold drop-shadow-xl text-center">Aquí está su inversión</h3>
+              <ul id="center-bubbles" class="mt-3 grid grid-cols-2 gap-2 text-white/90 text-xs md:text-sm font-semibold">
+                <li class="px-3 py-1 rounded-full bg-white/15">Costos ocultos</li>
+                <li class="px-3 py-1 rounded-full bg-white/15">Daños</li>
+                <li class="px-3 py-1 rounded-full bg-white/15">Resistencia social</li>
+                <li class="px-3 py-1 rounded-full bg-white/15">Riesgo operativo</li>
+              </ul>
             </div>
+          </div>
           </div>
           <!-- Left: Boom infraestructura -->
           <div id="split-left" class="absolute inset-y-0 left-0 w-1/2 md:w-[55%] bg-center bg-cover flex items-start justify-center pt-10 md:pt-12" style="background-image:url('assets/boom_infraestructura.jpg')">
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-black/10"></div>
-            <div class="relative z-10 p-0"><h3 class="text-white text-3xl md:text-5xl font-extrabold text-center leading-tight">Boom de Infraestructura en España</h3></div>
+            <div class="relative z-10 p-0"><h3 class="text-white text-2xl md:text-4xl font-extrabold text-center leading-tight">Boom de Infraestructura en España</h3></div>
           </div>
           <!-- Right: Escasez crítica -->
           <div id="split-right" class="absolute inset-y-0 right-0 w-1/2 md:w-[55%] bg-center bg-cover flex items-start justify-center pt-10 md:pt-12" style="background-image:url('assets/Escasez_critica.jpg')">
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-black/10"></div>
-            <div class="relative z-10 p-0"><h3 class="text-white text-3xl md:text-5xl font-extrabold text-center leading-tight">Escasez Crítica de Agua</h3></div>
+            <div class="relative z-10 p-0"><h3 class="text-white text-2xl md:text-4xl font-extrabold text-center leading-tight">Escasez Crítica de Agua</h3></div>
           </div>
         </div>
         <p class="mt-6 text-center text-sm text-gray-500">Deslice para ver el contraste ↓</p>
@@ -161,7 +162,7 @@
     <section id="solucion" class="relative py-20 md:py-32 bg-gray-50 overflow-hidden">
       <div class="container-pad">
         <h2 class="section-title" data-aos="fade-up">No Combatimos la Sequía. Cosechamos la Lluvia.</h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100"><span class="font-semibold" style="color:#0d3b66">Creando una Esponja de Suelo Vivo</span>: parallax de suelo seco → raíces que infiltran agua.</p>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100"><span class="font-semibold" style="color:#0d3b66">Creando una Esponja de Suelo Vivo</span>: raíces que infiltran agua.</p>
 
         <!-- Parallax Soil Profile Infographic -->
         <figure id="soil-infographic" class="relative mt-12 h-[120vh] md:h-[150vh] rounded-2xl overflow-hidden shadow-xl">
@@ -170,13 +171,9 @@
             <source src="assets/soil-loop.mp4" type="video/mp4" />
           </video>
           <!-- Base: suelo degradado -->
-          <img src="assets/suelo_degradado.jpg" alt="Suelo degradado y erosionado" class="absolute inset-0 w-full h-full object-cover z-10" loading="lazy">
           <!-- Reveal: suelo esponja/raíces (masked) -->
           <img id="soil-reveal" src="assets/soil_ponge.jpg" alt="Perfil de suelo esponja con raíces" class="absolute inset-0 w-full h-full object-cover z-30" style="--reveal:0%; -webkit-mask-image: linear-gradient(to top, black var(--reveal), transparent calc(var(--reveal) + 12%)); mask-image: linear-gradient(to top, black var(--reveal), transparent calc(var(--reveal) + 12%));" loading="lazy">
           <!-- Overlay heading for prominence -->
-          <div class="absolute top-3 left-1/2 -translate-x-1/2 z-40">
-            <span class="px-5 py-2 rounded-full text-white" style="background:rgba(13,59,102,.85); font-family:'Montserrat',sans-serif; font-weight:700; font-size:clamp(16px,2.8vw,28px);">Creando una Esponja de Suelo Vivo</span>
-          </div>
           <!-- Labels (bigger) -->
           <div class="absolute top-5 left-5 z-40">
             <span class="inline-flex items-center px-4 py-2 text-base md:text-lg rounded-full bg-white/85 text-gray-900 shadow">Antes: suelo compactado</span>
@@ -198,37 +195,37 @@
       <div class="container-pad">
         <h2 class="section-title" data-aos="fade-up">Nuestro Ciclo de Valor</h2>
         <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Haga clic en cada cuadrante para explorar cómo se conecta la salud del suelo con el rendimiento del activo.</p>
-        <div class="mt-12 grid lg:grid-cols-2 gap-10 items-center">
+        <div class="mt-12 grid lg:grid-cols-2 gap-10 items-center group hover:scale-[1.015] transition-transform duration-500">
           <!-- Quadrant Grid (big tap targets) -->
           <div>
-            <div id="value-grid" class="grid grid-cols-3 grid-rows-3 gap-0 place-items-center">
+            <div id="value-grid" class="grid grid-cols-3 grid-rows-3 gap-2 place-items-center">
               <!-- Top Left → Suelo Esponja (panel-solution) -->
               <button class="value-node group col-start-1 row-start-1 p-0 bg-transparent shadow-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0d3b66]" data-target="panel-solution" aria-controls="panel-solution">
-                <img src="assets/Top%20Left.svg" alt="Suelo Esponja" class="w-32 h-32 md:w-40 md:h-40 object-contain transition-transform duration-300 group-hover:scale-105">
+                <img src="assets/Top%20Left.svg" alt="Suelo Esponja" class="w-44 h-44 md:w-56 md:h-56 -m-1 object-contain transition-transform duration-300 group-hover:scale-105">
               </button>
               <!-- Top Center spacer -->
               <div class="col-start-2 row-start-1"></div>
               <!-- Top Right → Resiliencia (panel-resilience) -->
               <button class="value-node group col-start-3 row-start-1 p-0 bg-transparent shadow-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0d3b66]" data-target="panel-resilience" aria-controls="panel-resilience">
-                <img src="assets/Top%20Right.svg" alt="Resiliencia del Activo" class="w-32 h-32 md:w-40 md:h-40 object-contain transition-transform duration-300 group-hover:scale-105">
+                <img src="assets/Top%20Right.svg" alt="Resiliencia del Activo" class="w-44 h-44 md:w-56 md:h-56 -m-1 object-contain transition-transform duration-300 group-hover:scale-105">
               </button>
               <!-- Middle Left spacer -->
               <div class="col-start-1 row-start-2"></div>
               <!-- Center → Visión (panel-vision) -->
               <button class="value-node group col-start-2 row-start-2 p-0 bg-transparent shadow-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0d3b66]" data-target="panel-vision" aria-controls="panel-vision">
-                <img src="assets/Center.svg" alt="Visión Estratégica" class="w-36 h-36 md:w-44 md:h-44 object-contain transition-transform duration-300 group-hover:scale-105">
+                <img src="assets/Center.svg" alt="Visión Estratégica" class="w-48 h-48 md:w-60 md:h-60 -m-1 object-contain transition-transform duration-300 group-hover:scale-105">
               </button>
               <!-- Middle Right spacer -->
               <div class="col-start-3 row-start-2"></div>
               <!-- Bottom Left → ESG/licencia (panel-esg) -->
               <button class="value-node group col-start-1 row-start-3 p-0 bg-transparent shadow-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0d3b66]" data-target="panel-esg" aria-controls="panel-esg">
-                <img src="assets/Bottom%20Leftt.svg" alt="Impacto Local y Licencia Social" class="w-32 h-32 md:w-40 md:h-40 object-contain transition-transform duration-300 group-hover:scale-105">
+                <img src="assets/Bottom%20Leftt.svg" alt="Impacto Local y Licencia Social" class="w-44 h-44 md:w-56 md:h-56 -m-1 object-contain transition-transform duration-300 group-hover:scale-105">
               </button>
               <!-- Bottom Center spacer -->
               <div class="col-start-2 row-start-3"></div>
               <!-- Bottom Right → Beneficios (panel-investor) -->
               <button class="value-node group col-start-3 row-start-3 p-0 bg-transparent shadow-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0d3b66]" data-target="panel-investor" aria-controls="panel-investor">
-                <img src="assets/Bottom%20Right.svg" alt="Beneficios Operativos y al Inversor" class="w-32 h-32 md:w-40 md:h-40 object-contain transition-transform duration-300 group-hover:scale-105">
+                <img src="assets/Bottom%20Right.svg" alt="Beneficios Operativos y al Inversor" class="w-44 h-44 md:w-56 md:h-56 -m-1 object-contain transition-transform duration-300 group-hover:scale-105">
               </button>
             </div>
           </div>
@@ -315,36 +312,110 @@
       <div class="container-pad">
         <h2 class="section-title" data-aos="fade-up">Análisis y Casos de Éxito</h2>
         <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Datos, industria y resultados Water-Positive.</p>
+
+        <!-- Cards -->
         <div class="mt-12 grid md:grid-cols-3 gap-8">
+          <!-- Artículo 1 -->
           <article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1621568422079-a530f3a846c4?q=80&w=2070&auto=format&fit=crop" alt="Análisis de datos" class="w-full h-48 object-cover">
-            <div class="p-6">
-              <p class="text-sm font-semibold text-emerald-600">ESTADÍSTICAS</p>
-              <h3 class="mt-2 text-xl font-bold text-gray-900">El Coste Oculto del Soiling en Parques FV</h3>
-              <p class="mt-3 text-gray-600">Cómo la degradación del suelo impacta los costes de O&M.</p>
-              <a href="#" class="mt-4 inline-block font-semibold text-emerald-700 hover:text-emerald-800">Leer más →</a>
+            <img loading="lazy" src="assets/soil_ponge.jpg" alt="Suelo esponja y raíces" class="w-full h-48 object-cover">
+            <div class="p-6 flex flex-col h-full">
+              <p class="text-sm font-semibold text-emerald-600">RESILIENCIA</p>
+              <h3 class="mt-2 text-xl font-bold text-gray-900">Resiliencia Climática Desde el Suelo</h3>
+              <p class="mt-3 text-gray-600">El suelo sano modera extremos climáticos, protege activos y reduce OPEX.
+              </p>
+              <button class="mt-4 inline-flex items-center justify-center gap-2 font-semibold text-emerald-700 hover:text-emerald-800 underline underline-offset-4" data-open-article="resiliencia">
+                Leer más
+              </button>
             </div>
           </article>
+          <!-- Artículo 2 -->
           <article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1556742502-ec7c0ef34b1?q=80&w=1974&auto=format&fit=crop" alt="Revisión de planos" class="w-full h-48 object-cover">
-            <div class="p-6">
-              <p class="text-sm font-semibold text-emerald-600">CASO DE ÉXITO</p>
-              <h3 class="mt-2 text-xl font-bold text-gray-900">Cómo un Data Center en Aragón fue Water-Positive</h3>
-              <p class="mt-3 text-gray-600">De riesgo hídrico a ventaja comunitaria y de negocio.</p>
-              <a href="#" class="mt-4 inline-block font-semibold text-emerald-700 hover:text-emerald-800">Leer más →</a>
+            <img loading="lazy" src="assets/suelo_degradado.jpg" alt="Suelo degradado y erosión" class="w-full h-48 object-cover">
+            <div class="p-6 flex flex-col h-full">
+              <p class="text-sm font-semibold text-emerald-600">CRISIS DEL SUELO</p>
+              <h3 class="mt-2 text-xl font-bold text-gray-900">Crisis Bajo los Pies de España</h3>
+              <p class="mt-3 text-gray-600">La pérdida de la función esponja dispara costes, inundaciones y sequías.
+              </p>
+              <button class="mt-4 inline-flex items-center justify-center gap-2 font-semibold text-emerald-700 hover:text-emerald-800 underline underline-offset-4" data-open-article="crisis">
+                Leer más
+              </button>
             </div>
           </article>
+          <!-- Artículo 3 -->
           <article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="300">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop" alt="Gráficos de rendimiento" class="w-full h-48 object-cover">
-            <div class="p-6">
-              <p class="text-sm font-semibold text-emerald-600">INFORME TÉCNICO</p>
-              <h3 class="mt-2 text-xl font-bold text-gray-900">Midiendo la Infiltración: Metodología y Verificación</h3>
-              <p class="mt-3 text-gray-600">Medir, verificar y certificar cada litro recargado.</p>
-              <a href="#" class="mt-4 inline-block font-semibold text-emerald-700 hover:text-emerald-800">Leer más →</a>
+            <img loading="lazy" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&auto=format&fit=crop" alt="Sala de servidores" class="w-full h-48 object-cover">
+            <div class="p-6 flex flex-col h-full">
+              <p class="text-sm font-semibold text-emerald-600">DATA CENTERS</p>
+              <h3 class="mt-2 text-xl font-bold text-gray-900">Desafío Water‑Positive para Data Centers</h3>
+              <p class="mt-3 text-gray-600">De consumidores a proveedores netos de agua mediante recarga in situ.
+              </p>
+              <button class="mt-4 inline-flex items-center justify-center gap-2 font-semibold text-emerald-700 hover:text-emerald-800 underline underline-offset-4" data-open-article="dc-water">
+                Leer más
+              </button>
             </div>
           </article>
         </div>
       </div>
+
+      <!-- Article Modal -->
+      <div id="article-modal" class="fixed inset-0 z-[70] hidden">
+        <div class="absolute inset-0 bg-black/60" data-close-article></div>
+        <div class="absolute inset-x-0 top-6 md:top-12 mx-auto max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col">
+          <header class="flex items-center justify-between px-6 py-4 border-b">
+            <h3 id="article-title" class="text-2xl font-bold text-gray-900"></h3>
+            <button class="px-3 py-1.5 rounded-lg bg-gray-100 hover:bg-gray-200" aria-label="Cerrar" data-close-article>Cerrar ✕</button>
+          </header>
+          <figure id="article-figure" class="w-full h-56 md:h-72 bg-gray-100 overflow-hidden"><img alt="" class="w-full h-full object-cover"/></figure>
+          <article id="article-body" class="prose prose-lg max-w-none px-6 py-6"></article>
+        </div>
+      </div>
+
+      <!-- Hidden Article Content -->
+      <template id="tpl-resiliencia">
+        <div data-title>Resiliencia Climática Desde el Suelo – La Defensa Natural de la Infraestructura</div>
+        <div data-image src="assets/soil_ponge.jpg"></div>
+        <div data-body>
+          <p>La ola de inversión en infraestructura en España coincide con extremos climáticos cada vez más intensos. La defensa climática más costo‑efectiva no es otra obra dura: es el <strong>suelo saludable</strong>, que modera temperaturas, absorbe lluvias extremas y crea microclimas estables.</p>
+          <h4>Protección climática que no se ve</h4>
+          <ul>
+            <li><strong>Regulación térmica:</strong> enfriamiento por evapotranspiración (−5 a −8&nbsp;°C); superficies −20 a −30&nbsp;°C vs. suelo desnudo.</li>
+            <li><strong>Estabilización hídrica:</strong> infiltración que evita inundaciones y recarga acuíferos.</li>
+            <li><strong>Continuidad operativa:</strong> condiciones estables que reducen OPEX y alargan la vida útil de equipos.</li>
+          </ul>
+          <h4>Integración tecno‑natural</h4>
+          <p>Sensores, riego de apoyo y gestión predictiva optimizan el rendimiento del sistema vivo para proteger activos críticos.</p>
+        </div>
+      </template>
+
+      <template id="tpl-crisis">
+        <div data-title>Crisis Bajo los Pies de España – El Desastre Invisible</div>
+        <div data-image src="assets/suelo_degradado.jpg"></div>
+        <div data-body>
+          <p>España ha perdido la función esponja de millones de hectáreas de suelo. Cuando el suelo deja de almacenar agua, suben las facturas, aumentan las inundaciones y las sequías se agravan.</p>
+          <h4>La conexión que falta</h4>
+          <p>El suelo sano es <strong>almacenamiento hídrico natural</strong>; el degradado actúa como cemento. La pérdida de capacidad equivale a decenas de miles de millones de m³ que hoy faltan en el territorio.</p>
+          <h4>La oportunidad</h4>
+          <p>Con €127&nbsp;bn en FV y data centers, podemos <strong>catalizar la regeneración</strong>: parques FV y DC bien diseñados generan <em>retención verificada</em> por m² y mejoran la seguridad hídrica local.</p>
+        </div>
+      </template>
+
+      <template id="tpl-dc-water">
+        <div data-title>Desafío Water‑Positive para Data Centers</div>
+        <div data-image src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1600&auto=format&fit=crop"></div>
+        <div data-body>
+          <p>Los data centers son la nueva clase de gran consumidor hídrico en regiones ya estresadas. La respuesta no es solo eficiencia: es <strong>diseño de cuenca</strong> para pasar de consumidor a proveedor neto de agua.</p>
+          <h4>Intensidad hídrica</h4>
+          <ul>
+            <li>Sistemas de aire avanzados: 0,2–0,5&nbsp;L/kWh</li>
+            <li>Evaporativos estándar: 1–3&nbsp;L/kWh</li>
+            <li>Equipos antiguos: 5–10&nbsp;L/kWh</li>
+          </ul>
+          <h4>Marco Water‑Positive</h4>
+          <p>Recarga in situ, recuperación total del agua de proceso, alianzas comunitarias y verificación independiente.</p>
+          <h4>Ventajas</h4>
+          <p>Menor riesgo, preferencia regulatoria, mejor ESG e impulso a la viabilidad a largo plazo.</p>
+        </div>
+      </template>
     </section>
 
     <!-- CTA FINAL -->
@@ -356,6 +427,37 @@
         <a href="mailto:andrea@terranext.co" class="mt-10 inline-block px-10 py-5 bg-white text-emerald-700 font-bold text-lg rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-2xl">Solicitar un Análisis de Impacto</a>
       </div>
     </section>
+  
+    <!-- Article modal script -->
+    <script>
+      (function(){
+        const modal = document.getElementById('article-modal');
+        if (!modal) return;
+        const title = document.getElementById('article-title');
+        const figure = document.querySelector('#article-figure img');
+        const body = document.getElementById('article-body');
+        const openers = document.querySelectorAll('[data-open-article]');
+        const closeEls = modal.querySelectorAll('[data-close-article]');
+        const templates = {
+          resiliencia: document.getElementById('tpl-resiliencia'),
+          crisis: document.getElementById('tpl-crisis'),
+          'dc-water': document.getElementById('tpl-dc-water'),
+        };
+        const open = (key) => {
+          const tpl = templates[key];
+          if (!tpl) return;
+          title.textContent = tpl.content.querySelector('[data-title]').textContent;
+          figure.src = tpl.content.querySelector('[data-image]').getAttribute('src');
+          body.innerHTML = tpl.content.querySelector('[data-body]').innerHTML;
+          modal.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+        };
+        const close = () => { modal.classList.add('hidden'); document.body.style.overflow = ''; };
+        openers.forEach(btn => btn.addEventListener('click', () => open(btn.dataset.openArticle)));
+        closeEls.forEach(el => el.addEventListener('click', close));
+        modal.addEventListener('keydown', (e)=>{ if (e.key==='Escape') close(); });
+      })();
+    </script>
   </main>
 
   <!-- Footer -->
